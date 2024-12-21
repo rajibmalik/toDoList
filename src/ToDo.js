@@ -5,6 +5,7 @@ export class ToDo {
   #priority;
   #notes;
   #checkList = [];
+  static id = 1;
 
   constructor(title, description, dueDate, priority, notes) {
     this.#title = title;
@@ -12,6 +13,7 @@ export class ToDo {
     this.#dueDate = dueDate;
     this.#priority = priority;
     this.#notes = notes;
+    this.id = ToDo.id++;
   }
 
   getTitle() {
