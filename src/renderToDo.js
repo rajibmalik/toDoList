@@ -7,34 +7,43 @@ export const renderToDo = (function () {
 
   function createToDo(toDo) {
     const container = createToDoDOM.createContainer();
-    const checkBox = createCheckBox(toDo);
-    const title = createTitle(toDo);
-    const descriptionBtn = createDescriptioBtn(toDo);
+    const checkBox = createCheckBox();
+    const title = createTitle(toDo.getTitle());
+    const descriptionBtn = createDescriptioBtn(toDo.getDescription());
+    const dueDate = createDueDate(toDo.getDueDate());
 
     container.appendChild(checkBox);
     container.appendChild(title);
     container.appendChild(descriptionBtn);
+    container.appendChild(dueDate);
+
     content.appendChild(container);
   }
 
-  function createCheckBox(toDo) {
-    const toDoElement = createToDoDOM.createCheckBox(toDo);
+  function createCheckBox() {
+    const toDoElement = createToDoDOM.createCheckBox();
     checkBoxEventListener.createListener(toDoElement);
 
     return toDoElement;
   }
 
-  function createTitle(toDo) {
-    const titleElement = createToDoDOM.createTitle(toDo.getTitle());
+  function createTitle(title) {
+    const titleElement = createToDoDOM.createTitle(title);
 
     return titleElement;
   }
 
-  function createDescriptioBtn(toDo) {
+  function createDescriptioBtn(description) {
     const buttonElement = createToDoDOM.createDescriptionBtn();
     descriptionBtnClickListener.createListener(buttonElement);
 
     return buttonElement;
+  }
+
+  function createDueDate(date) {
+    const dateElement = createToDoDOM.createDueDate(date);
+
+    return dateElement;
   }
 
   return { createToDo };

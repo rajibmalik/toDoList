@@ -47,7 +47,18 @@ export const createToDoDOM = (function () {
     return descriptionBtnContainer;
   }
 
-  function createDueDate(dueDate) {}
+  function createDueDate(dueDate) {
+    const dateContainer = document.createElement("div");
+    dateContainer.classList.add("toDoDateContainer");
+
+    const date = document.createElement("p");
+    date.textContent = dueDate;
+    date.classList.add("toDoDate");
+
+    dateContainer.appendChild(date);
+
+    return dateContainer;
+  }
 
   function createPriority(priority) {}
 
@@ -61,5 +72,11 @@ export const createToDoDOM = (function () {
 
   function createCheckList(checkList) {}
 
-  return { createContainer, createCheckBox, createTitle, createDescriptionBtn };
+  return {
+    createContainer,
+    createCheckBox,
+    createTitle,
+    createDescriptionBtn,
+    createDueDate,
+  };
 })();
