@@ -1,15 +1,11 @@
 export const createToDoDOM = (function () {
   const content = document.querySelector("#content");
 
-  function createToDo(selector, toDo) {
-    const toDoContainer = document.createElement("div");
-    toDoContainer.classList.add("toDoContainer");
+  function createContainer() {
+    const container = document.createElement("div");
+    container.classList.add("toDoContainer");
 
-    const checkBox = createCheckBox();
-
-    toDoContainer.appendChild(checkBox);
-
-    return toDoContainer;
+    return container;
   }
 
   function createCheckBox() {
@@ -55,5 +51,5 @@ export const createToDoDOM = (function () {
 
   function createCheckList(checkList) {}
 
-  return { createToDo };
+  return { createContainer, createCheckBox };
 })();
