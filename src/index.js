@@ -6,7 +6,7 @@ import "./styles.css";
 const content = document.querySelector("#content");
 
 const toDo = new ToDo(
-  "Groceries",
+  "Buy Groceries",
   "Buy groceries",
   "12/10/12",
   "High",
@@ -14,7 +14,7 @@ const toDo = new ToDo(
 );
 
 const toDo2 = new ToDo(
-  "Groceriesssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+  "This is a really long title for some obnoxious reason that ",
   "Buy groceries",
   "12/10/12",
   "High",

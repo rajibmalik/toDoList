@@ -94,8 +94,8 @@ body {
   justify-content: start;
   align-items: start;
   background-color: red;
-  width: 900px;
-  height: 60px;
+  width: 825px;
+  height: 50px;
 }
 
 .toDoCheckBoxContainer {
@@ -125,7 +125,7 @@ body {
 }
 
 .toDoTitle {
-  text-align: center;
+  font-size: 1.4rem;
 }
 
 .toDoInformationContainer {
@@ -134,9 +134,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 22.5%;
+  width: 20%;
   margin-left: auto;
-  gap: 70px;
+  gap: 60px;
 }
 
 .toDoDescriptionBtnContainer {
@@ -170,7 +170,7 @@ body {
   width: 8%;
   margin-left: auto;
   gap: 20px;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .toDoEditBtnContainer,
