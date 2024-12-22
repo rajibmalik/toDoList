@@ -1,4 +1,7 @@
 import { ToDo } from "./ToDo.js";
+// import { createToDoDOM } from "./toDoDOMRenderers/createToDoDOM.js";
+import { renderToDo } from "./renderToDo.js";
+import "./styles.css";
 
 const content = document.querySelector("#content");
 
@@ -11,3 +14,5 @@ const toDo = new ToDo(
 );
 
 console.log(toDo);
+
+renderToDo.createToDo(toDo);
