@@ -34,12 +34,17 @@ export const createToDoDOM = (function () {
     return titleElementContainer;
   }
 
-  function createDetailsbutton(title, priority, dueDate, description) {
-    const descriptionElement = document.createElement("p");
-    descriptionElement.classList.add("toDoDescription");
-    descriptionElement.textContent = description;
+  function createDescriptionBtn() {
+    const descriptionBtnContainer = document.createElement("div");
+    descriptionBtnContainer.classList.add("toDoDescriptionBtnContainer");
 
-    return descriptionElement;
+    const descriptionBtn = document.createElement("button");
+    descriptionBtn.classList.add("toDoDescriptionBtn");
+    descriptionBtn.textContent = "DETAILS";
+
+    descriptionBtnContainer.appendChild(descriptionBtn);
+
+    return descriptionBtnContainer;
   }
 
   function createDueDate(dueDate) {}
@@ -56,5 +61,5 @@ export const createToDoDOM = (function () {
 
   function createCheckList(checkList) {}
 
-  return { createContainer, createCheckBox, createTitle };
+  return { createContainer, createCheckBox, createTitle, createDescriptionBtn };
 })();
