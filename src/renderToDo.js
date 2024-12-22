@@ -12,8 +12,9 @@ export const renderToDo = (function () {
     const checkBox = createCheckBox();
     const title = createTitle(toDo.getTitle());
     const informationContainer = createInformationContainer();
-    const descriptionBtn = createDescriptioBtn(toDo.getDescription());
+    const descriptionBtn = createDescriptionBtn(toDo.getDescription());
     const dueDate = createDueDate(toDo.getDueDate());
+    const editAndDeleteBtnContainer = createEditAndDeleteBtnContainer();
     const editBtn = createEditBtn();
     const deleteBtn = createDeleteBtn();
 
@@ -21,9 +22,11 @@ export const renderToDo = (function () {
     container.appendChild(title);
     informationContainer.appendChild(descriptionBtn);
     informationContainer.appendChild(dueDate);
-    informationContainer.appendChild(editBtn);
-    informationContainer.appendChild(deleteBtn);
+    editAndDeleteBtnContainer.appendChild(editBtn);
+    editAndDeleteBtnContainer.appendChild(deleteBtn);
+
     container.appendChild(informationContainer);
+    container.appendChild(editAndDeleteBtnContainer);
 
     content.appendChild(container);
   }
@@ -47,7 +50,7 @@ export const renderToDo = (function () {
     return container;
   }
 
-  function createDescriptioBtn(description) {
+  function createDescriptionBtn(description) {
     const btnElement = createToDoDOM.createDescriptionBtn();
     descriptionBtnClickListener.createListener(btnElement);
 
@@ -58,6 +61,12 @@ export const renderToDo = (function () {
     const dateElement = createToDoDOM.createDueDate(date);
 
     return dateElement;
+  }
+
+  function createEditAndDeleteBtnContainer() {
+    const container = createToDoDOM.createEditAndDeleteBtnContainer();
+
+    return container;
   }
 
   function createEditBtn() {

@@ -79,6 +79,13 @@ export const createToDoDOM = (function () {
 
   function createCheckList(checkList) {}
 
+  function createEditAndDeleteBtnContainer() {
+    const container = document.createElement("div");
+    container.classList.add("toDoEditAndDeleteBtnContainer");
+
+    return container;
+  }
+
   function createEditButton() {
     const editButtonContainer = document.createElement("div");
     editButtonContainer.classList.add("toDoEditBtnContainer");
@@ -110,6 +117,7 @@ export const createToDoDOM = (function () {
     createInformationContainer,
     createDescriptionBtn,
     createDueDate,
+    createEditAndDeleteBtnContainer,
     createEditButton,
     createDeleteButton,
   };
