@@ -92,8 +92,8 @@ body {
   justify-content: start;
   align-items: start;
   background-color: red;
-  width: 700px;
-  height: 40px;
+  width: 900px;
+  height: 60px;
 }
 
 .toDoCheckBoxContainer {
@@ -125,6 +125,16 @@ body {
   text-align: center;
 }
 
+.toDoInformationContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  /* gap: 35px; */
+}
+
 .toDoDescriptionBtnContainer {
   display: flex;
   justify-content: center;
@@ -145,4 +155,19 @@ body {
 }
 
 .toDoDate {
+}
+
+.toDoEditBtnContainer,
+.toDoDeleteBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+  height: 100%;
+}
+
+.toDoEditBtn,
+.toDoDeleteBtn {
+  width: 17.5px;
+  height: 17.5px;
 }

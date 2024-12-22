@@ -34,6 +34,13 @@ export const createToDoDOM = (function () {
     return titleElementContainer;
   }
 
+  function createInformationContainer() {
+    const container = document.createElement("div");
+    container.classList.add("toDoInformationContainer");
+
+    return container;
+  }
+
   function createDescriptionBtn() {
     const descriptionBtnContainer = document.createElement("div");
     descriptionBtnContainer.classList.add("toDoDescriptionBtnContainer");
@@ -72,11 +79,38 @@ export const createToDoDOM = (function () {
 
   function createCheckList(checkList) {}
 
+  function createEditButton() {
+    const editButtonContainer = document.createElement("div");
+    editButtonContainer.classList.add("toDoEditBtnContainer");
+
+    const editButton = document.createElement("button");
+    editButton.classList.add("toDoEditBtn");
+
+    editButtonContainer.appendChild(editButton);
+
+    return editButtonContainer;
+  }
+
+  function createDeleteButton() {
+    const deleteButtonContainer = document.createElement("div");
+    deleteButtonContainer.classList.add("toDoDeleteBtnContainer");
+
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("toDoDeleteBtn");
+
+    deleteButtonContainer.appendChild(deleteButton);
+
+    return deleteButtonContainer;
+  }
+
   return {
     createContainer,
     createCheckBox,
     createTitle,
+    createInformationContainer,
     createDescriptionBtn,
     createDueDate,
+    createEditButton,
+    createDeleteButton,
   };
 })();
