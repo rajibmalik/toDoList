@@ -7,8 +7,10 @@ export const renderToDo = (function () {
   function createToDo(toDo) {
     const container = createToDoDOM.createContainer();
     const checkBox = createCheckBox(toDo);
+    const title = createTitle(toDo);
 
     container.appendChild(checkBox);
+    container.appendChild(title);
     content.appendChild(container);
   }
 
@@ -17,6 +19,12 @@ export const renderToDo = (function () {
     checkBoxEventListener.createListener(toDoElement);
 
     return toDoElement;
+  }
+
+  function createTitle(toDo) {
+    const titleElement = createToDoDOM.createTitle(toDo.getTitle());
+
+    return titleElement;
   }
 
   return { createToDo };

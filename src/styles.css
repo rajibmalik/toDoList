@@ -112,3 +112,15 @@ body {
   background-color: #fff;
   appearance: none; */
 }
+
+.toDoTitleContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+}
+
+.toDoTitle {
+  text-align: center;
+}

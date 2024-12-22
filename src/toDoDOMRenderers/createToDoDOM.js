@@ -22,11 +22,16 @@ export const createToDoDOM = (function () {
   }
 
   function createTitle(title) {
-    const titleElement = document.createElement("h1");
+    const titleElementContainer = document.createElement("div");
+    titleElementContainer.classList.add("toDoTitleContainer");
+
+    const titleElement = document.createElement("p");
     titleElement.classList.add("toDoTitle");
     titleElement.textContent = title;
 
-    return titleElement;
+    titleElementContainer.appendChild(titleElement);
+
+    return titleElementContainer;
   }
 
   function createDetailsbutton(title, priority, dueDate, description) {
@@ -51,5 +56,5 @@ export const createToDoDOM = (function () {
 
   function createCheckList(checkList) {}
 
-  return { createContainer, createCheckBox };
+  return { createContainer, createCheckBox, createTitle };
 })();
