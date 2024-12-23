@@ -76,6 +76,7 @@ body {
   align-items: start;
   width: 100vw;
   height: 100vh;
+  background-color: #f9f9f9;
 }
 
 #content {
@@ -96,6 +97,13 @@ body {
   background-color: red;
   width: 825px;
   height: 50px;
+}
+
+.toDoContainer:hover {
+  box-shadow: -5px 5px 5px grey, 5px 5px 5px grey;
+
+  transform: scale(1.01);
+  transition: 0.3s;
 }
 
 .toDoCheckBoxContainer {
@@ -126,8 +134,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-40%, -42.5%);
-  font-size: 13px;
+  transform: translate(-50%, -46.25%);
+  font-size: 15px;
   font-weight: 900;
   color: green;
 }
@@ -143,6 +151,19 @@ body {
 
 .toDoTitle {
   font-size: 1.4rem;
+}
+
+.toDoTitle.completed {
+  text-decoration: line-through;
+  opacity: 60%;
+}
+
+.toDoTitle.completed,
+.toDoDescriptionBtn.completed,
+.toDoDate.completed,
+.toDoEditBtn.completed,
+.toDoDeleteBtn.completed {
+  opacity: 60%;
 }
 
 .toDoInformationContainer {

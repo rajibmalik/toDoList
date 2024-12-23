@@ -1,5 +1,6 @@
 import { ToDo } from "./ToDo.js";
 // import { createToDoDOM } from "./toDoDOMRenderers/createToDoDOM.js";
+import { checkBoxEventListener } from "./eventListeners/checkBoxEventListener.js";
 import { renderToDo } from "./renderToDo.js";
 import "./styles.css";
 
@@ -25,3 +26,5 @@ console.log(toDo);
 
 renderToDo.createToDo(toDo);
 renderToDo.createToDo(toDo2);
+
+checkBoxEventListener.createListener();
