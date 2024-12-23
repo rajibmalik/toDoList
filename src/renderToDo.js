@@ -9,7 +9,7 @@ export const renderToDo = (function () {
 
   function createToDo(toDo) {
     const container = createToDoDOM.createContainer();
-    const checkBox = createCheckBox();
+    const checkBox = createCheckBox(toDo.getId());
     const title = createTitle(toDo.getTitle());
     const informationContainer = createInformationContainer();
     const descriptionBtn = createDescriptionBtn(toDo.getDescription());
@@ -31,8 +31,8 @@ export const renderToDo = (function () {
     content.appendChild(container);
   }
 
-  function createCheckBox() {
-    const toDoElement = createToDoDOM.createCheckBox();
+  function createCheckBox(id) {
+    const toDoElement = createToDoDOM.createCheckBox(id);
     checkBoxEventListener.createListener(toDoElement);
 
     return toDoElement;

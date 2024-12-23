@@ -5,7 +5,8 @@ export const checkBoxEventListener = (function () {
     const input = element.querySelector(".toDoCheckBox");
 
     input.addEventListener("click", (e) => {
-      console.log("Checkbox was clicked");
+      console.log(input);
+      console.log(`CheckBox ${input.id}`);
     });
   }
 

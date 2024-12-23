@@ -5,7 +5,8 @@ export class ToDo {
   #priority;
   #notes;
   #checkList = [];
-  static id = 1;
+  static #id = 1;
+  #instanceId;
 
   constructor(title, description, dueDate, priority, notes) {
     this.#title = title;
@@ -13,7 +14,7 @@ export class ToDo {
     this.#dueDate = dueDate;
     this.#priority = priority;
     this.#notes = notes;
-    this.id = ToDo.id++;
+    this.#instanceId = ToDo.#id++;
   }
 
   getTitle() {
@@ -38,6 +39,10 @@ export class ToDo {
 
   getCheckList() {
     return this.#checkList;
+  }
+
+  getId() {
+    return this.#instanceId;
   }
 
   setTitle(title) {

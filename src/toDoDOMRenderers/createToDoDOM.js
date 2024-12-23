@@ -8,15 +8,21 @@ export const createToDoDOM = (function () {
     return container;
   }
 
-  function createCheckBox() {
-    const checkBoxContainer = document.createElement("div");
+  function createCheckBox(id) {
+    const checkBoxContainer = document.createElement("label");
     checkBoxContainer.classList.add("toDoCheckBoxContainer");
+    checkBoxContainer.setAttribute("for", id);
 
     const checkBox = document.createElement("input");
     checkBox.classList.add("toDoCheckBox");
+    checkBox.id = id;
     checkBox.type = "checkbox";
 
+    const checkBoxSpan = document.createElement("span");
+    checkBoxSpan.classList.add("toDoCheckBoxSpan");
+
     checkBoxContainer.appendChild(checkBox);
+    checkBoxContainer.appendChild(checkBoxSpan);
 
     return checkBoxContainer;
   }
