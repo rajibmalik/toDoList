@@ -1,5 +1,6 @@
 import { addToDoBtn } from "./dom/addToDoBtn";
 import { addToDoBtnClickListener } from "./eventListeners/addToDoBtnClickListener";
+import { addToDoExitBtnClickListener } from "./eventListeners/addToDoExitBtnClickListener";
 
 export const renderNavBar = (function () {
   const content = document.querySelector("#navBar");
@@ -8,8 +9,10 @@ export const renderNavBar = (function () {
 
   function renderAddToDoBtn() {
     const btn = addToDoBtn.create();
-    addToDoBtnClickListener.createListener();
     content.appendChild(btn);
+
+    addToDoBtnClickListener.createListener();
+    addToDoExitBtnClickListener.createListener();
   }
 
   return { renderAddToDoBtn };

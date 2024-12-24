@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
     <div id="mainContainer">
@@ -12,5 +16,49 @@
         <div id="toDoList"></div>
       </div>
     </div>
+
+    <dialog id="addToDoDialog">
+      <div id="addToDoHeaderContainer">
+        <h3 id="addToDoHeader">Add a new To Do</h3>
+        <button class="fa-solid fa-x" id="addToDoExitBtn"></button>
+      </div>
+
+      <form id="addToDoForm" method="dialog">
+        <div id="inputContainer">
+          <input
+            class="inputBox"
+            id="titleInput"
+            type="text"
+            placeholder="Title"
+            maxlength="25"
+          />
+          <input
+            class="inputBox"
+            id="detailsInput"
+            type="text"
+            placeholder="Details"
+            maxlength="50"
+          />
+          <input
+            class="inputBox"
+            id="dueDateInput"
+            type="number"
+            placeholder="Due Date"
+            max="100"
+          />
+          <input
+            class="inputBox"
+            id="priorityInput"
+            type="number"
+            placeholder="Due Date"
+            max="100"
+          />
+        </div>
+
+        <div id="addToDosubmitBtnContainer">
+          <input id="submitBtn" type="submit" id="submit" value="Submit" />
+        </div>
+      </form>
+    </dialog>
   </body>
 </html>
