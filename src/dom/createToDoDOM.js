@@ -1,6 +1,4 @@
 export const createToDoDOM = (function () {
-  const content = document.querySelector("#content");
-
   function createContainer() {
     const container = document.createElement("div");
     container.classList.add("toDoContainer");

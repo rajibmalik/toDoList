@@ -2,6 +2,8 @@ import { ToDo } from "./ToDo.js";
 // import { createToDoDOM } from "./toDoDOMRenderers/createToDoDOM.js";
 import { checkBoxEventListener } from "./eventListeners/checkBoxEventListener.js";
 import { renderToDo } from "./renderToDo.js";
+import { renderNavBar } from "./renderNavBar.js";
+// import { addToDoBtn } from "./dom/addToDoBtn.js";
 import "./styles.css";
 
 const content = document.querySelector("#content");
@@ -27,4 +29,4 @@ console.log(toDo);
 renderToDo.render(toDo);
 renderToDo.render(toDo2);
 
-checkBoxEventListener.createListener();
+renderNavBar.renderAddToDoBtn();

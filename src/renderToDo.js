@@ -5,7 +5,7 @@ import { editBtnClickListener } from "./eventListeners/editBtnClickListener";
 import { deleteBtnClickListener } from "./eventListeners/deleteBtnClickListener";
 
 export const renderToDo = (function () {
-  const content = document.querySelector("#content");
+  const content = document.querySelector("#toDoList");
 
   function render(toDo) {
     const container = createToDoDOM.createContainer();
@@ -33,7 +33,7 @@ export const renderToDo = (function () {
 
   function createCheckBox(id) {
     const toDoElement = createToDoDOM.createCheckBox(id);
-    checkBoxEventListener.createListener(toDoElement);
+    checkBoxEventListener.createListener();
 
     return toDoElement;
   }

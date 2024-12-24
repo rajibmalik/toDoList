@@ -79,15 +79,40 @@ body {
   background-color: #f9f9f9;
 }
 
-#content {
+#mainContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+#navBar {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 20vw;
+  height: 100%;
+  background-color: blue;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+}
+
+#toDoList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
   height: 100%;
   gap: 10px;
 }
+
+/* ToDo */
 
 .toDoContainer {
   display: flex;
@@ -224,4 +249,25 @@ body {
 .toDoDeleteBtn {
   width: 17.5px;
   height: 17.5px;
+}
+
+/* Add ToDo Btn */
+
+.addToDoBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.addToDoBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  font-size: 2rem;
+  cursor: pointer;
 }
