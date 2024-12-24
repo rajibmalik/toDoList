@@ -1,3 +1,6 @@
+import { descriptionBtnModal } from "../modals/descriptionBtnModal";
+import { ToDo } from "../ToDo";
+
 export const descriptionBtnClickListener = (function () {
   const content = document.querySelector("#content");
 
@@ -7,7 +10,11 @@ export const descriptionBtnClickListener = (function () {
         const toDoDescriptionBtn = e.target.closest(".toDoDescriptionBtn");
 
         if (toDoDescriptionBtn) {
-          console.log("clicked description btn");
+          // We need a way to retrive the correct toDo object and pass it to the descriptionBtnModal
+          const descriptionModal = descriptionBtnModal.createContainer();
+          console.log("Modal: " + descriptionModal);
+          content.appendChild(descriptionModal);
+          descriptionModal.showModal();
         }
       }
     });
