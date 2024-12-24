@@ -1,9 +1,15 @@
 export const descriptionBtnClickListener = (function () {
-  function createListener(element) {
-    const btn = element.querySelector(".toDoDescriptionBtn");
+  const content = document.querySelector("#content");
 
-    btn.addEventListener("click", (e) => {
-      console.log("description btn clicked");
+  function createListener() {
+    content.addEventListener("click", (e) => {
+      if (e.target.classList.contains("toDoDescriptionBtn")) {
+        const toDoDescriptionBtn = e.target.closest(".toDoDescriptionBtn");
+
+        if (toDoDescriptionBtn) {
+          console.log("clicked description btn");
+        }
+      }
     });
   }
 
