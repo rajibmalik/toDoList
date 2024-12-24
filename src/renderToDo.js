@@ -1,4 +1,4 @@
-import { createToDoDOM } from "./toDoDOMRenderers/createToDoDOM";
+import { createToDoDOM } from "./dom/createToDoDOM";
 import { checkBoxEventListener } from "./eventListeners/checkBoxEventListener";
 import { descriptionBtnClickListener } from "./eventListeners/descriptionBtnClickListener";
 import { editBtnClickListener } from "./eventListeners/editBtnClickListener";
@@ -7,7 +7,7 @@ import { deleteBtnClickListener } from "./eventListeners/deleteBtnClickListener"
 export const renderToDo = (function () {
   const content = document.querySelector("#content");
 
-  function createToDo(toDo) {
+  function render(toDo) {
     const container = createToDoDOM.createContainer();
     const checkBox = createCheckBox(toDo.getId());
     const title = createTitle(toDo.getTitle());
@@ -83,5 +83,5 @@ export const renderToDo = (function () {
     return btnElement;
   }
 
-  return { createToDo };
+  return { render };
 })();

@@ -24,7 +24,7 @@ const toDo2 = new ToDo(
 
 console.log(toDo);
 
-renderToDo.createToDo(toDo);
-renderToDo.createToDo(toDo2);
+renderToDo.render(toDo);
+renderToDo.render(toDo2);
 
 checkBoxEventListener.createListener();
