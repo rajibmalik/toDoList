@@ -1,16 +1,23 @@
 export const addToDoExitBtnClickListener = (function () {
   const mainContainer = document.querySelector("#mainContainer");
-  let addToDoModal = document.querySelector("#addToDoDialog");
+  const addToDoModal = document.querySelector("#addToDoDialog");
+  const addToDoModalContent = document.querySelector("#addToDoDialogContent");
 
   function createListener() {
-    console.log("ADDDING EXIT BTN");
     addToDoModal.addEventListener("click", (e) => {
-      if (e.target.id.includes("addToDoExitBtn")) {
-        addToDoModal.close();
-        addToDoModal.classList.remove("open");
-        mainContainer.classList.remove("blur");
+      if (
+        e.target.id.includes("addToDoExitBtn") ||
+        !addToDoModalContent.contains(e.target)
+      ) {
+        close();
       }
     });
+
+    function close() {
+      addToDoModal.close();
+      addToDoModal.classList.remove("open");
+      mainContainer.classList.remove("blur");
+    }
   }
 
   return { createListener };
