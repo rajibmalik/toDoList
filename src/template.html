@@ -47,17 +47,36 @@
                 class="inputBox"
                 id="dueDateInput"
                 type="date"
-                placeholder="Due Date:"
                 max="100"
               ></input>
             </div>
-              <textarea
-                class="inputBox"
-                id="priorityInput"
-                type="number"
-                placeholder="Priority:"
+            <div id="priorityContainer">
+              <p id="priorityText">Priority:</p>
+              <input
+                class="inputBox priorityBtn"
+                id="priorityInputLow"
+                type="button"
                 max="100"
-              ></textarea>
+                value="LOW"
+                data-clicked="false"
+              ></input>
+              <input
+              class="inputBox priorityBtn"
+              id="priorityInputMedium"
+              type="button"
+              max="100"
+              value="MEDIUM"
+              data-clicked="false"
+            ></input>
+            <input
+            class="inputBox priorityBtn"
+            id="priorityInputHigh"
+            type="button"
+            max="100"
+            value="HIGH"
+            data-clicked="false"
+          ></input>
+            </div>
             </div>
           </div>
 

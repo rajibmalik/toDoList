@@ -187,7 +187,7 @@ body {
   outline: none;
   border: none;
   height: 50px;
-  width: 100%;
+  width: 500px;
   resize: none;
   font-size: 1.5rem;
 }
@@ -210,6 +210,7 @@ body {
   justify-content: center;
   width: 100%;
   height: 150px;
+  gap: 20px;
 }
 
 #dueDateInputContainer {
@@ -224,11 +225,78 @@ body {
 }
 
 #dueDateInput {
-  display: flex;
+  text-align: center;
   border: 3px solid black;
   border-radius: 10px;
   padding: 10px;
+  width: 240px;
+  height: 50px;
+}
+
+#dueDateInput::placeholder {
+  font-size: 1rem;
+}
+
+#dueDateInput::-webkit-datetime-edit-text,
+#dueDateInput::-webkit-datetime-edit-month-field,
+#dueDateInput::-webkit-datetime-edit-day-field,
+#dueDateInput::-webkit-datetime-edit-year-field {
+  text-transform: uppercase;
+  color: #333333;
+}
+
+#priorityContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  gap: 25px;
+}
+
+#priorityText {
+  font-size: 1.5rem;
+}
+
+#priorityInputLow,
+#priorityInputMedium,
+#priorityInputHigh {
+  border: solid 3px;
+  border-radius: 7.5px;
   width: fit-content;
+  padding: 0 20px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#priorityInputLow.clicked {
+  background-color: green;
+  color: white;
+}
+
+#priorityInputMedium.clicked {
+  background-color: orange;
+  color: white;
+}
+
+#priorityInputHigh.clicked {
+  background-color: red;
+  color: white;
+}
+
+#priorityInputLow {
+  border: solid 3px green;
+}
+
+#priorityInputMedium {
+  border: solid 3px orange;
+}
+
+#priorityInputHigh {
+  border: solid 3px red;
 }
 
 #addToDoSubmitBtnContainer {

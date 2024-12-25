@@ -3,6 +3,7 @@ import { addToDoBtnClickListener } from "./eventListeners/addToDoBtnClickListene
 import { addToDoExitBtnClickListener } from "./eventListeners/addToDoExitBtnClickListener";
 import { textAreaKeydown } from "./eventListeners/textAreaKeydownListener";
 import { submitToDoBtnClickListener } from "./eventListeners/submitToDoBtnClickListener";
+import { priorityBtnClickListener } from "./eventListeners/priorityBtnClickListener";
 
 export const renderNavBar = (function () {
   const content = document.querySelector("#navBar");
@@ -20,6 +21,7 @@ export const renderNavBar = (function () {
     addToDoExitBtnClickListener.createListener();
     textAreaKeydown.createListener();
     submitToDoBtnClickListener.createListener();
+    priorityBtnClickListener.createListener();
   }
 
   return { renderAddToDoBtn, addModalEventListeners };

@@ -8,6 +8,8 @@ export const addToDoExitBtnClickListener = (function () {
       if (
         e.target.id.includes("addToDoExitBtn") ||
         !addToDoModalContent.contains(e.target)
+        // ||
+        // e.target.id.includes("submitBtn")
       ) {
         close();
       }

@@ -1,3 +1,6 @@
+import { ToDo } from "../ToDo";
+import { renderToDo } from "../renderToDo";
+
 export const submitToDoBtnClickListener = (function () {
   const mainContainer = document.querySelector("#mainContainer");
   const addToDoModal = document.querySelector("dialog");
@@ -8,11 +11,31 @@ export const submitToDoBtnClickListener = (function () {
       e.preventDefault();
 
       const title = addToDoForm.querySelector("#titleInput").value;
-      const details = document.querySelector("#detailsInput").value;
-      const date = document.querySelector("#dueDateInput").value;
-      const priority = document.querySelector("#priorityInput").value;
+      const description = addToDoForm.querySelector("#detailsInput").value;
+      const dueDate = addToDoForm.querySelector("#dueDateInput").value;
+      let priority = "none";
 
-      console.log(title, details, date, priority);
+      const priorities = Array.from(
+        addToDoForm.querySelectorAll(".priorityBtn")
+      );
+
+      priorities.forEach((btn) => {
+        console.log(`Button: ${btn}`);
+        console.log(`Button clicked ${btn.dataset.clicked}`);
+        if (btn.dataset.clicked === "true") {
+          priority = btn.value;
+        }
+      });
+
+      console.log(title, description, dueDate, priority);
+
+      const toDo = new ToDo(title, description, dueDate, priority);
+
+      const toDoDOM = renderToDo.render(toDo);
+
+      addToDoModal.classList.remove("open");
+      mainContainer.classList.remove("blur");
+      addToDoModal.close();
     });
   }
 
