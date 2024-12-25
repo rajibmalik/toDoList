@@ -1,5 +1,6 @@
 import { ToDo } from "../ToDo";
 import { renderToDo } from "../renderToDo";
+import { toDoFormExtractor } from "../toDoFormExtractor";
 
 export const submitToDoBtnClickListener = (function () {
   const mainContainer = document.querySelector("#mainContainer");
@@ -10,26 +11,14 @@ export const submitToDoBtnClickListener = (function () {
     addToDoForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const title = addToDoForm.querySelector("#titleInput").value;
-      const description = addToDoForm.querySelector("#detailsInput").value;
-      const dueDate = addToDoForm.querySelector("#dueDateInput").value;
-      let priority = "none";
+      const toDoData = toDoFormExtractor.extractFormData();
 
-      const priorities = Array.from(
-        addToDoForm.querySelectorAll(".priorityBtn")
+      const toDo = new ToDo(
+        toDoData.title,
+        toDoData.description,
+        toDoData.dueDate,
+        toDoData.priority
       );
-
-      priorities.forEach((btn) => {
-        console.log(`Button: ${btn}`);
-        console.log(`Button clicked ${btn.dataset.clicked}`);
-        if (btn.dataset.clicked === "true") {
-          priority = btn.value;
-        }
-      });
-
-      console.log(title, description, dueDate, priority);
-
-      const toDo = new ToDo(title, description, dueDate, priority);
 
       const toDoDOM = renderToDo.render(toDo);
 
