@@ -3,22 +3,8 @@ export const toDoFormExtractor = (function () {
 
   function extractFormData() {
     const title = addToDoForm.querySelector("#titleInput").value;
-
-    if (!title) {
-      return { valid: false, error: "Please fill out the title" };
-    }
-
     const description = addToDoForm.querySelector("#detailsInput").value;
-
-    if (!description) {
-      return { valid: false, error: "Please fill out the description" };
-    }
     const dueDate = addToDoForm.querySelector("#dueDateInput").value;
-
-    if (!dueDate) {
-      return { valid: false, error: "Please fill out the due date" };
-    }
-
     let priority = extractPriorityData();
 
     if (!priority) {

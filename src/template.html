@@ -31,14 +31,16 @@
               id="titleInput"
               type="text"
               placeholder="Title: Buy groceries"
-              maxlength="25"
+              maxlength="40"
+              required
             ></textarea>
             <textarea
               class="inputBox"
               id="detailsInput"
               type="text"
               placeholder="Details: e.g avocado, rice, lettuce"
-              maxlength="50"
+              maxlength="180"
+              required
             ></textarea>
             <div id="dueDatePriorityContainer">
               <div id="dueDateInputContainer">
@@ -48,34 +50,37 @@
                 id="dueDateInput"
                 type="date"
                 max="100"
+                required
               ></input>
             </div>
             <div id="priorityContainer">
               <p id="priorityText">Priority:</p>
-              <input
+              <button
                 class="inputBox priorityBtn"
                 id="priorityInputLow"
                 type="button"
                 max="100"
                 value="LOW"
                 data-clicked="false"
-              ></input>
-              <input
+              >LOW</button>
+              
+              <button
               class="inputBox priorityBtn"
               id="priorityInputMedium"
               type="button"
               max="100"
               value="MEDIUM"
               data-clicked="false"
-            ></input>
-            <input
+            >MEDIUM</button>
+
+            <button
             class="inputBox priorityBtn"
             id="priorityInputHigh"
             type="button"
             max="100"
             value="HIGH"
             data-clicked="false"
-          ></input>
+          >HIGH</button>
             </div>
             </div>
           </div>

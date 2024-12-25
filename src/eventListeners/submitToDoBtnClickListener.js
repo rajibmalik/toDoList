@@ -18,7 +18,7 @@ export const submitToDoBtnClickListener = (function () {
         return;
       }
 
-      //   Create ToDo Manager Class
+      // Create ToDo Manager Class
       const toDo = new ToDo(
         toDoData.title,
         toDoData.description,
