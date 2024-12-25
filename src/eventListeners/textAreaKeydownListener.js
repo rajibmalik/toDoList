@@ -1,12 +1,13 @@
 export const textAreaKeydown = (function () {
   function createListener() {
-    document.addEventListener("keydown", (e) => {
-      console.log("HERE " + e);
+    const modal = document.querySelector("#addToDoDialog");
+    modal.addEventListener("keydown", (e) => {
       const textareas = Array.from(
-        document.querySelectorAll("#inputContainer textarea")
+        modal.querySelectorAll("#inputContainer textarea")
       );
       const current = document.activeElement;
-      if (current.tagName === "TEXTAREA") {
+
+      if (current.classList.contains("inputBox")) {
         const index = textareas.indexOf(current);
 
         if (e.key === "ArrowUp") {
