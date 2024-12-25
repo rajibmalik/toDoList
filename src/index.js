@@ -30,3 +30,4 @@ renderToDo.render(toDo);
 renderToDo.render(toDo2);
 
 renderNavBar.renderAddToDoBtn();
+renderNavBar.addModalEventListeners();
