@@ -101,16 +101,18 @@ body {
   background-color: blue;
 }
 
+/* Add ToDo dialog */
+
 #addToDoDialog {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 900px;
-  height: 500px;
-  background-color: darkred;
+  width: 960px;
+  height: 480px;
+  background-color: #e5e4e2;
   border: 0;
-  border-radius: 5px;
+  /* border-radius: 10px; */
   transition: 0.3s ease-in-out;
   opacity: 0;
   transform: scale(0);
@@ -119,11 +121,15 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 0;
+  outline: none;
+  pointer-events: none;
 }
 
 #addToDoDialog.open {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
+  visibility: open;
+  pointer-events: auto;
 }
 
 #addToDoDialogContent {
@@ -131,29 +137,101 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 5px;
 }
 
 #addToDoHeaderContainer {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  background-color: blue;
+  background-color: #73c2fb;
+  width: 100%;
+  padding: 15px;
 }
 
 #addToDoHeader {
   font-size: 1.75rem;
+  color: #333333;
+}
+
+#addToDoForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100%;
+  width: 100%;
+}
+
+#inputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex: 1;
+  padding: 15px;
 }
 
 #addToDoExitBtn {
   width: 50px;
-  background-color: darkred;
+  background-color: #73c2fb;
   border: none;
+  outline: none;
 }
 
 #content {
   display: flex;
   flex-direction: column;
+}
+
+.inputBox {
+  background-color: #e5e4e2;
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 100%;
+  resize: none;
+  font-size: 1.5rem;
+}
+
+.inputBox::placeholder {
+  color: #333333;
+}
+
+#titleInput {
+  font-size: 1.75rem;
+}
+
+#detailsInput {
+  height: 100px;
+}
+
+#dueDatePriorityContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+}
+
+#addToDoSubmitBtnContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+#submitBtn {
+  border-radius: 5px;
+  border: 3px solid black;
+  height: 50px;
+  width: 150px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333333;
+  background-color: #e5e4e2;
+}
+
+#submitBtn:hover {
+  background-color: #73c2fb;
 }
 
 #toDoList {
@@ -173,7 +251,7 @@ body {
   flex-direction: row;
   justify-content: start;
   align-items: start;
-  background-color: lightgrey;
+  background-color: #e5e4e2;
   width: 825px;
   height: 50px;
 }

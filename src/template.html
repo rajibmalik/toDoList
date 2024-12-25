@@ -19,48 +19,50 @@
 
     <dialog id="addToDoDialog">
       <div id="addToDoDialogContent">
-      <div id="addToDoHeaderContainer">
-        <h3 id="addToDoHeader">Create a new To Do</h3>
-        <button class="fa-solid fa-x" id="addToDoExitBtn"></button>
-      </div>
-
-      <form id="addToDoForm" method="dialog">
-        <div id="inputContainer">
-          <input
-            class="inputBox"
-            id="titleInput"
-            type="text"
-            placeholder="Title"
-            maxlength="25"
-          />
-          <input
-            class="inputBox"
-            id="detailsInput"
-            type="text"
-            placeholder="Details"
-            maxlength="50"
-          />
-          <input
-            class="inputBox"
-            id="dueDateInput"
-            type="number"
-            placeholder="Due Date"
-            max="100"
-          />
-          <input
-            class="inputBox"
-            id="priorityInput"
-            type="number"
-            placeholder="Due Date"
-            max="100"
-          />
+        <div id="addToDoHeaderContainer">
+          <h3 id="addToDoHeader">Create a new To Do</h3>
+          <button class="fa-solid fa-x" id="addToDoExitBtn"></button>
         </div>
 
-        <div id="addToDosubmitBtnContainer">
-          <input id="submitBtn" type="submit" id="submit" value="Submit" />
-        </div>
+        <form id="addToDoForm" method="dialog">
+          <div id="inputContainer">
+            <textarea
+              class="inputBox"
+              id="titleInput"
+              type="text"
+              placeholder="Title: Buy groceries"
+              maxlength="25"
+            ></textarea>
+            <textarea
+              class="inputBox"
+              id="detailsInput"
+              type="text"
+              placeholder="Details: e.g avocado, rice, lettuce"
+              maxlength="50"
+            ></textarea>
+            <div id="dueDatePriorityContainer">
+              <textarea
+                class="inputBox"
+                id="dueDateInput"
+                type="number"
+                placeholder="Due Date:"
+                max="100"
+              ></textarea>
+              <textarea
+                class="inputBox"
+                id="priorityInput"
+                type="number"
+                placeholder="Priority:"
+                max="100"
+              ></textarea>
+            </div>
+          </div>
+
+          <div id="addToDoSubmitBtnContainer">
+            <input id="submitBtn" type="submit" id="submit" value="ADD" />
+          </div>
+        </form>
       </div>
-      </form>
     </dialog>
   </body>
 </html>
