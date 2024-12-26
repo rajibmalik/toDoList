@@ -101,18 +101,18 @@ body {
   background-color: blue;
 }
 
-/* Add ToDo dialog */
+/* Add ToDo dialog/modal */
 
 #addToDoDialog {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 960px;
-  height: 480px;
+  width: 850px;
+  height: 500px;
   background-color: #e5e4e2;
   border: 0;
-  /* border-radius: 10px; */
+  border-radius: 10px;
   transition: 0.3s ease-in-out;
   opacity: 0;
   transform: scale(0);
@@ -175,6 +175,7 @@ body {
   background-color: #73c2fb;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 #content {
@@ -322,21 +323,37 @@ body {
   justify-content: center;
   width: 100%;
   padding-bottom: 20px;
+  gap: 50px;
 }
 
-#submitBtn {
+#addToDoCloseBtn,
+#addToDoSubmitBtn {
   border-radius: 5px;
-  border: 3px solid black;
   height: 50px;
   width: 150px;
   font-size: 1.5rem;
   cursor: pointer;
   color: #333333;
-  background-color: #e5e4e2;
 }
 
-#submitBtn:hover {
+#addToDoCloseBtn {
+  background-color: #e5e4e2;
+  border: 3px solid black;
+}
+
+#addToDoCloseBtn:hover {
+  background-color: #848884;
+  color: white;
+}
+
+#addToDoSubmitBtn {
+  border: 3px solid black;
   background-color: #73c2fb;
+}
+
+#addToDoSubmitBtn:hover {
+  background-color: #0077c0;
+  color: white;
 }
 
 #toDoList {

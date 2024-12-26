@@ -7,9 +7,8 @@ export const addToDoExitBtnClickListener = (function () {
     addToDoModal.addEventListener("click", (e) => {
       if (
         e.target.id.includes("addToDoExitBtn") ||
-        !addToDoModalContent.contains(e.target)
-        // ||
-        // e.target.id.includes("submitBtn")
+        !addToDoModalContent.contains(e.target) ||
+        e.target.id.includes("addToDoCloseBtn")
       ) {
         close();
       }
