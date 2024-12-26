@@ -27,6 +27,8 @@ export const submitToDoBtnClickListener = (function () {
           toDoData.priority
         );
 
+        console.log("toDo ID: " + toDo.getId());
+
         // Render the ToDo DOM element
         renderToDo.render(toDo);
 
