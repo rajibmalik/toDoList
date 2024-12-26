@@ -1,8 +1,8 @@
 import { createToDoDOM } from "./dom/createToDoDOM";
-import { checkBoxEventListener } from "./eventListeners/checkBoxEventListener";
-import { descriptionBtnClickListener } from "./eventListeners/descriptionBtnClickListener";
-import { editBtnClickListener } from "./eventListeners/editBtnClickListener";
-import { deleteBtnClickListener } from "./eventListeners/deleteBtnClickListener";
+import { checkBoxEventListener } from "./eventListeners/toDo/checkBoxEventListener";
+import { descriptionBtnClickListener } from "./eventListeners/toDo/descriptionBtnClickListener";
+import { editBtnClickListener } from "./eventListeners/toDo/editBtnClickListener";
+import { deleteBtnClickListener } from "./eventListeners/toDo/deleteBtnClickListener";
 
 export const renderToDo = (function () {
   const content = document.querySelector("#toDoList");

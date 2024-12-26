@@ -1,6 +1,6 @@
-import { ToDo } from "../ToDo";
-import { renderToDo } from "../renderToDo";
-import { toDoFormExtractor } from "../toDoFormExtractor";
+import { ToDo } from "../../ToDo";
+import { renderToDo } from "../../renderToDo";
+import { toDoFormExtractor } from "../../toDoFormExtractor";
 
 export const submitToDoBtnClickListener = (function () {
   const mainContainer = document.querySelector("#mainContainer");

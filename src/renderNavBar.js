@@ -1,9 +1,9 @@
 import { addToDoBtn } from "./dom/addToDoBtn";
-import { addToDoBtnClickListener } from "./eventListeners/addToDoBtnClickListener";
-import { addToDoExitBtnClickListener } from "./eventListeners/addToDoExitBtnClickListener";
-import { textAreaKeydown } from "./eventListeners/textAreaKeydownListener";
-import { submitToDoBtnClickListener } from "./eventListeners/submitToDoBtnClickListener";
-import { priorityBtnClickListener } from "./eventListeners/priorityBtnClickListener";
+import { addToDoBtnClickListener } from "./eventListeners/addToDoForm/addToDoBtnClickListener";
+import { addToDoExitBtnClickListener } from "./eventListeners/addToDoForm/addToDoExitBtnClickListener";
+import { textAreaKeydown } from "./eventListeners/addToDoForm/textAreaKeydownListener";
+import { submitToDoBtnClickListener } from "./eventListeners/addToDoForm/submitToDoBtnClickListener";
+import { priorityBtnClickListener } from "./eventListeners/addToDoForm/priorityBtnClickListener";
 
 export const renderNavBar = (function () {
   const content = document.querySelector("#navBar");

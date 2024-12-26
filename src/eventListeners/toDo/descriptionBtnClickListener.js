@@ -1,5 +1,5 @@
-import { descriptionBtnModal } from "../modals/descriptionBtnModal";
-import { ToDo } from "../ToDo";
+import { descriptionBtnModal } from "../../modals/descriptionBtnModal";
+import { ToDo } from "../../ToDo";
 
 export const descriptionBtnClickListener = (function () {
   const content = document.querySelector("#content");

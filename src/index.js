@@ -1,6 +1,6 @@
 import { ToDo } from "./ToDo.js";
 // import { createToDoDOM } from "./toDoDOMRenderers/createToDoDOM.js";
-import { checkBoxEventListener } from "./eventListeners/checkBoxEventListener.js";
+import { checkBoxEventListener } from "./eventListeners/toDo/checkBoxEventListener.js";
 import { renderToDo } from "./renderToDo.js";
 import { renderNavBar } from "./renderNavBar.js";
 // import { addToDoBtn } from "./dom/addToDoBtn.js";
