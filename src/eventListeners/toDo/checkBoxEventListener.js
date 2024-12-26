@@ -3,11 +3,15 @@ export const checkBoxEventListener = (function () {
 
   function createListener() {
     content.addEventListener("click", (e) => {
-      if (e.target.classList.contains("toDoCheckBox")) {
+      if (e.target.classList.contains("toDoCheckBoxSpan")) {
         // Find the parent toDoContainer of the checkbox
         const toDoContainer = e.target.closest(".toDoContainer");
+        const toDoCheckBox = toDoContainer.querySelector(".toDoCheckBox");
+        const toDoCheckBoxSpan =
+          toDoContainer.querySelector(".toDoCheckBoxSpan");
 
         if (toDoContainer) {
+          toDoCheckBox.checked = !toDoCheckBox.checked;
           const titleElement = toDoContainer.querySelector(".toDoTitle");
           const descriptionBtn = toDoContainer.querySelector(
             ".toDoDescriptionBtn"

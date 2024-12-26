@@ -396,7 +396,6 @@ body {
 
 .toDoCheckBox {
   position: absolute;
-  opacity: 0;
 }
 
 .toDoCheckBoxSpan {
@@ -417,6 +416,7 @@ body {
   font-size: 15px;
   font-weight: 900;
   color: green;
+  opacity: 100;
 }
 
 .toDoTitleContainer {

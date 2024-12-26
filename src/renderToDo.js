@@ -8,7 +8,7 @@ export const renderToDo = (function () {
   const content = document.querySelector("#toDoList");
 
   function render(toDo) {
-    const container = createToDoDOM.createContainer();
+    const container = createToDoDOM.createContainer(toDo.getId());
     const checkBox = createCheckBox(toDo.getId());
     const title = createTitle(toDo.getTitle());
     const informationContainer = createInformationContainer();
@@ -33,7 +33,7 @@ export const renderToDo = (function () {
 
   function createCheckBox(id) {
     const toDoElement = createToDoDOM.createCheckBox(id);
-    checkBoxEventListener.createListener();
+    // checkBoxEventListener.createListener();
 
     return toDoElement;
   }
@@ -52,7 +52,6 @@ export const renderToDo = (function () {
 
   function createDescriptionBtn(description) {
     const btnElement = createToDoDOM.createDescriptionBtn();
-    descriptionBtnClickListener.createListener(btnElement);
 
     return btnElement;
   }

@@ -1,6 +1,7 @@
 import { ToDo } from "./ToDo.js";
 // import { createToDoDOM } from "./toDoDOMRenderers/createToDoDOM.js";
 import { checkBoxEventListener } from "./eventListeners/toDo/checkBoxEventListener.js";
+import { descriptionBtnClickListener } from "./eventListeners/toDo/descriptionBtnClickListener.js";
 import { renderToDo } from "./renderToDo.js";
 import { renderNavBar } from "./renderNavBar.js";
 // import { addToDoBtn } from "./dom/addToDoBtn.js";
@@ -19,10 +20,13 @@ const toDo2 = new ToDo(
 );
 
 renderToDo.render(toDo);
-// renderToDo.render(toDo2);
+renderToDo.render(toDo2);
 
 renderNavBar.renderAddToDoBtn();
 renderNavBar.addModalEventListeners();
+
+checkBoxEventListener.createListener();
+descriptionBtnClickListener.createListener();
 
 const manager = new ToDoManager();
 
@@ -33,4 +37,7 @@ toDos.forEach((toDo) => {
   console.log(toDo);
 });
 
-manager.updateToDo(t);
+const toDo3 = manager.getToDo("1");
+console.log("To Do 3: " + toDo3);
+
+// manager.updateToDo(t);

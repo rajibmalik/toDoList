@@ -1,7 +1,8 @@
 export const createToDoDOM = (function () {
-  function createContainer() {
+  function createContainer(id) {
     const container = document.createElement("div");
     container.classList.add("toDoContainer");
+    container.id = id;
 
     return container;
   }
