@@ -5,6 +5,7 @@ export class ToDo {
   #priority;
   #notes;
   #checkList = [];
+  #isComplete;
   static #id = 1;
   #instanceId;
 
@@ -15,6 +16,7 @@ export class ToDo {
     this.#priority = priority;
     this.#notes = notes;
     this.#instanceId = ToDo.#id++;
+    this.#isComplete = false;
   }
 
   getTitle() {
@@ -45,6 +47,10 @@ export class ToDo {
     return this.#instanceId;
   }
 
+  getIsComplete() {
+    return this.#isComplete;
+  }
+
   setTitle(title) {
     this.#title = title;
   }
@@ -67,6 +73,10 @@ export class ToDo {
 
   setCheckList(checkList) {
     this.#checkList = checkList;
+  }
+
+  setIsComplete(isComplete) {
+    this.#isComplete = isComplete;
   }
 
   toString() {

@@ -1,3 +1,5 @@
+import { ToDoManagerSingleton } from "../../ToDoManagerSingleton";
+
 export const checkBoxEventListener = (function () {
   const content = document.querySelector("#content");
 
@@ -23,6 +25,9 @@ export const checkBoxEventListener = (function () {
           [titleElement, descriptionBtn, dateText, editBtn, deleteBtn].forEach(
             (element) => element?.classList.toggle("completed")
           );
+
+          const toDoManager = ToDoManagerSingleton.getInstance();
+          const todo = toDoManager.getToDo(parseInt(toDoContainer.id));
         }
       }
     });

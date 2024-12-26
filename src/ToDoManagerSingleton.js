@@ -42,6 +42,11 @@ export class ToDoManagerSingleton {
     }
   }
 
+  setIsComplete(id) {
+    const toDo = this.getToDo(id);
+    toDo.setIsComplete(!toDo.getIsComplete());
+  }
+
   logToDos() {
     this.#toDos.forEach((toDo) => {
       console.log(toDo);
