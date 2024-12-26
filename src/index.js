@@ -5,7 +5,7 @@ import { descriptionBtnClickListener } from "./eventListeners/toDo/descriptionBt
 import { renderToDo } from "./renderToDo.js";
 import { renderNavBar } from "./renderNavBar.js";
 // import { addToDoBtn } from "./dom/addToDoBtn.js";
-import { ToDoManager } from "./ToDoManager.js";
+import { ToDoManagerSingleton } from "./ToDoManagerSingleton.js";
 import "./styles.css";
 
 const content = document.querySelector("#content");
@@ -28,16 +28,10 @@ renderNavBar.addModalEventListeners();
 checkBoxEventListener.createListener();
 descriptionBtnClickListener.createListener();
 
-const manager = new ToDoManager();
+const manager = ToDoManagerSingleton.getInstance();
 
 manager.addToDo(toDo);
+manager.addToDo(toDo2);
 
-let toDos = manager.getToDos();
-toDos.forEach((toDo) => {
-  console.log(toDo);
-});
-
-const toDo3 = manager.getToDo("1");
-console.log("To Do 3: " + toDo3);
-
-// manager.updateToDo(t);
+// let toDos = manager.getToDos();
+// console.log("HERE" + toDos[0].getId());

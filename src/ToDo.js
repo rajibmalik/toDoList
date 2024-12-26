@@ -68,4 +68,10 @@ export class ToDo {
   setCheckList(checkList) {
     this.#checkList = checkList;
   }
+
+  toString() {
+    return `${this.#title}, ${this.#description}, ${this.#dueDate}, ${
+      this.#priority
+    }, ${this.#instanceId}`;
+  }
 }
