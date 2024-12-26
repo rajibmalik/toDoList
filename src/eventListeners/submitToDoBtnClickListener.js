@@ -11,25 +11,27 @@ export const submitToDoBtnClickListener = (function () {
     addToDoForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const { valid, toDoData, error } = toDoFormExtractor.extractFormData();
+      const { valid, toDoData } = toDoFormExtractor.extractFormData();
 
-      if (!valid) {
-        alert(error);
-        return;
+      if (valid) {
+        // Create ToDo Manager Class
+        console.log(`ToDo: title: ${toDoData.title}
+          description: ${toDoData.description}
+          dueDate: ${toDoData.dueDate}
+          priority: ${toDoData.priority}`);
+
+        const toDo = new ToDo(
+          toDoData.title,
+          toDoData.description,
+          toDoData.dueDate,
+          toDoData.priority
+        );
+
+        // Render the ToDo DOM element
+        renderToDo.render(toDo);
+
+        closeModal();
       }
-
-      // Create ToDo Manager Class
-      const toDo = new ToDo(
-        toDoData.title,
-        toDoData.description,
-        toDoData.dueDate,
-        toDoData.priority
-      );
-
-      // Render the ToDo DOM element
-      renderToDo.render(toDo);
-
-      closeModal();
     });
   }
 

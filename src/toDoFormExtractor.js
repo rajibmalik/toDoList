@@ -1,14 +1,21 @@
 export const toDoFormExtractor = (function () {
   const addToDoForm = document.querySelector("#addToDoForm");
+  const titleElement = addToDoForm.querySelector("#titleInput");
+  const descriptionElement = addToDoForm.querySelector("#detailsInput");
+  const dueDateElement = addToDoForm.querySelector("#dueDateInput");
+  const priorityElements = Array.from(
+    addToDoForm.querySelectorAll(".priorityBtn")
+  );
+  const errorMessage = addToDoForm.querySelector("#priorityError");
 
   function extractFormData() {
-    const title = addToDoForm.querySelector("#titleInput").value;
-    const description = addToDoForm.querySelector("#detailsInput").value;
-    const dueDate = addToDoForm.querySelector("#dueDateInput").value;
+    const title = titleElement.value.trim();
+    const description = descriptionElement.value.trim();
+    const dueDate = dueDateElement.value;
     let priority = extractPriorityData();
 
-    if (!priority) {
-      return { valid: false, error: "Please fill out the priority" };
+    if (!validatePriority(priority)) {
+      return { valid: false, toDoData: null };
     }
 
     const toDoData = {
@@ -18,20 +25,38 @@ export const toDoFormExtractor = (function () {
       priority,
     };
 
+    clearForm();
+
     return { valid: true, toDoData };
   }
 
   function extractPriorityData() {
-    let priority = "none";
-    const priorities = Array.from(addToDoForm.querySelectorAll(".priorityBtn"));
+    let priority = null;
 
-    priorities.forEach((btn) => {
+    priorityElements.forEach((btn) => {
       if (btn.dataset.clicked === "true") {
         priority = btn.value;
       }
     });
 
     return priority;
+  }
+
+  function validatePriority(priority) {
+    if (priority === null) {
+      errorMessage.classList.add("error");
+      return false;
+    }
+
+    return true;
+  }
+
+  function clearForm() {
+    addToDoForm.reset();
+    priorityElements.forEach((btn) => {
+      btn.classList.remove("clicked");
+    });
+    errorMessage.classList.remove("error");
   }
 
   return { extractFormData };
