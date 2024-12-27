@@ -15,7 +15,7 @@ const toDo = new ToDo("Buy Groceries", "Buy groceries", "2024-12-01", "LOW");
 
 const toDo2 = new ToDo(
   "This is a really long title for some obnoxious reason that ",
-  "Buy groceries",
+  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis ",
   "2024-12-01",
   "HIGH"
 );

@@ -10,14 +10,20 @@ export const descriptionBtnModal = (function () {
     dialogWrapper.classList.add("descriptionModalWrapper");
 
     const header = createHeader(toDo.title);
+    const informationContainer = document.createElement("div");
+    informationContainer.className = "descriptionModalInformationContainer";
+
     const description = createSubheading("Details:", toDo.description);
     const dueDate = createSubheading("Due Date:", toDo.dueDate);
     const priority = createSubheading("Priority:", toDo.priority);
 
     dialogWrapper.appendChild(header);
-    dialogWrapper.appendChild(description);
-    dialogWrapper.appendChild(dueDate);
-    dialogWrapper.appendChild(priority);
+
+    informationContainer.appendChild(dueDate);
+    informationContainer.appendChild(priority);
+    informationContainer.appendChild(description);
+
+    dialogWrapper.appendChild(informationContainer);
 
     dialog.appendChild(dialogWrapper);
 
@@ -32,7 +38,7 @@ export const descriptionBtnModal = (function () {
     const headerContainer = document.createElement("div");
     headerContainer.classList.add("descriptionModalHeaderContainer");
 
-    const header = document.createElement("h1");
+    const header = document.createElement("h2");
     header.textContent = title;
     header.classList.add("descriptionModalHeader");
 
