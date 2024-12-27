@@ -1,7 +1,8 @@
 import { ToDo } from "./ToDo.js";
 // import { createToDoDOM } from "./toDoDOMRenderers/createToDoDOM.js";
 import { checkBoxEventListener } from "./eventListeners/toDo/checkBoxEventListener.js";
-import { descriptionBtnClickListener } from "./eventListeners/toDo/descriptionBtnClickListener.js";
+import { descriptionBtnClickListener } from "./eventListeners/toDo/description/descriptionBtnClickListener.js";
+// import { descriptionModalExitBtnClickListener } from "./eventListeners/toDo/description/descriptionModalExitBtnClickListener.js";
 import { renderToDo } from "./renderToDo.js";
 import { renderNavBar } from "./renderNavBar.js";
 // import { addToDoBtn } from "./dom/addToDoBtn.js";
@@ -27,6 +28,7 @@ renderNavBar.addModalEventListeners();
 
 checkBoxEventListener.createListener();
 descriptionBtnClickListener.createListener();
+// descriptionModalExitBtnClickListener.createListener();
 
 const manager = ToDoManagerSingleton.getInstance();
 

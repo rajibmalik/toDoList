@@ -1,11 +1,29 @@
+import { descriptionModalExitBtnClickListener } from "../eventListeners/toDo/description/descriptionModalExitBtnClickListener";
+
 export const descriptionBtnModal = (function () {
   function createContainer(toDo) {
     const dialog = document.createElement("dialog");
+    console.log("DIALOG: " + dialog.innerHTML);
     dialog.classList.add("descriptionModal");
 
-    const header = createHeader(toDo.getTitle());
+    const dialogWrapper = document.createElement("div");
+    dialogWrapper.classList.add("descriptionModalWrapper");
 
-    dialog.appendChild(header);
+    const header = createHeader(toDo.title);
+    const description = createSubheading("Details:", toDo.description);
+    const dueDate = createSubheading("Due Date:", toDo.dueDate);
+    const priority = createSubheading("Priority:", toDo.priority);
+
+    dialogWrapper.appendChild(header);
+    dialogWrapper.appendChild(description);
+    dialogWrapper.appendChild(dueDate);
+    dialogWrapper.appendChild(priority);
+
+    dialog.appendChild(dialogWrapper);
+
+    console.log("HERE: " + dialog.innerHTML);
+
+    descriptionModalExitBtnClickListener.createListener();
 
     return dialog;
   }
@@ -18,9 +36,39 @@ export const descriptionBtnModal = (function () {
     header.textContent = title;
     header.classList.add("descriptionModalHeader");
 
+    const exitBtn = document.createElement("button");
+    exitBtn.classList.add("fa-solid", "fa-x");
+    exitBtn.classList.add("exitBtn");
+
     headerContainer.appendChild(header);
+    headerContainer.appendChild(exitBtn);
 
     return headerContainer;
+  }
+
+  function createSubheading(headerName, infoData) {
+    const descriptionContainer = document.createElement("div");
+    descriptionContainer.classList.add("descriptionModalSubContainer");
+
+    const headerContainer = document.createElement("div");
+    headerContainer.className = "descriptionModalSubHeaderContainer";
+    const header = document.createElement("h3");
+    header.classList.add("descriptionModalSubHeading");
+    header.textContent = headerName;
+
+    const infoContainer = document.createElement("div");
+    infoContainer.className = "descriptionModalInfoContainer";
+    const info = document.createElement("p");
+    info.classList.add("descriptionModalInfo");
+    info.textContent = infoData;
+
+    headerContainer.appendChild(header);
+    infoContainer.appendChild(info);
+
+    descriptionContainer.appendChild(headerContainer);
+    descriptionContainer.appendChild(infoContainer);
+
+    return descriptionContainer;
   }
 
   return { createContainer };

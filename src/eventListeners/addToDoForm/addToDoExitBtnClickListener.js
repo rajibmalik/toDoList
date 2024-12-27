@@ -15,9 +15,9 @@ export const addToDoExitBtnClickListener = (function () {
     });
 
     function close() {
-      addToDoModal.close();
       addToDoModal.classList.remove("open");
       mainContainer.classList.remove("blur");
+      addToDoModal.close();
     }
   }
 
