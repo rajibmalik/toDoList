@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 export const createToDoDOM = (function () {
   function createContainer(id) {
     const container = document.createElement("div");
@@ -60,11 +62,17 @@ export const createToDoDOM = (function () {
   }
 
   function createDueDate(dueDate) {
+    const dateObject = new Date(dueDate);
+    console.log("date: " + dueDate);
+    console.log("dateObject: " + dateObject);
+    const formattedDate = format(dateObject, "dd-MM-yyyy");
+    console.log("formatted date: " + formattedDate);
+
     const dateContainer = document.createElement("div");
     dateContainer.classList.add("toDoDateContainer");
 
     const date = document.createElement("p");
-    date.textContent = dueDate;
+    date.textContent = formattedDate;
     date.classList.add("toDoDate");
 
     dateContainer.appendChild(date);

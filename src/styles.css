@@ -424,7 +424,6 @@ body {
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 50%;
   height: 100%;
   flex: 1;
 }
@@ -453,8 +452,7 @@ body {
   align-items: center;
   height: 100%;
   width: 20%;
-  margin-left: auto;
-  gap: 60px;
+  gap: 35px;
 }
 
 .toDoDescriptionBtnContainer {
@@ -551,7 +549,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10%;
+  width: 80px;
   height: 100%;
 }
 
