@@ -8,6 +8,7 @@ import { renderNavBar } from "./renderNavBar.js";
 // import { addToDoBtn } from "./dom/addToDoBtn.js";
 import { ToDoManagerSingleton } from "./ToDoManagerSingleton.js";
 import "./styles.css";
+import { descriptionModalExitBtnClickListener } from "./eventListeners/toDo/description/descriptionModalExitBtnClickListener.js";
 
 const content = document.querySelector("#content");
 
@@ -28,7 +29,7 @@ renderNavBar.addModalEventListeners();
 
 checkBoxEventListener.createListener();
 descriptionBtnClickListener.createListener();
-// descriptionModalExitBtnClickListener.createListener();
+descriptionModalExitBtnClickListener.createListener();
 
 const manager = ToDoManagerSingleton.getInstance();
 

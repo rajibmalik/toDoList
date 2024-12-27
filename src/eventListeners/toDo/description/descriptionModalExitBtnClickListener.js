@@ -3,7 +3,15 @@ export const descriptionModalExitBtnClickListener = (function () {
 
   function createListener() {
     content.addEventListener("click", (e) => {
-      if (e.target.classList.contains("exitBtn")) {
+      const descriptionContent = document.querySelector(
+        ".descriptionModalWrapper"
+      );
+      console.log(descriptionContent);
+
+      if (
+        e.target.classList.contains("exitBtn") ||
+        !descriptionContent.contains(e.target)
+      ) {
         const descriptionModal = e.target.closest(".descriptionModal");
 
         if (descriptionModal) {

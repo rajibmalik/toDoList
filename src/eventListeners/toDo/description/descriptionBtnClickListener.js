@@ -17,7 +17,6 @@ export const descriptionBtnClickListener = (function () {
           console.log(toDoData);
 
           const modal = descriptionBtnModal.createContainer(toDoData);
-          console.log(modal.innerHTML);
           content.appendChild(modal);
           modal.showModal();
 

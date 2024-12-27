@@ -3,7 +3,6 @@ import { descriptionModalExitBtnClickListener } from "../eventListeners/toDo/des
 export const descriptionBtnModal = (function () {
   function createContainer(toDo) {
     const dialog = document.createElement("dialog");
-    console.log("DIALOG: " + dialog.innerHTML);
     dialog.classList.add("descriptionModal");
 
     const dialogWrapper = document.createElement("div");
@@ -27,9 +26,7 @@ export const descriptionBtnModal = (function () {
 
     dialog.appendChild(dialogWrapper);
 
-    console.log("HERE: " + dialog.innerHTML);
-
-    descriptionModalExitBtnClickListener.createListener();
+    // descriptionModalExitBtnClickListener.createListener();
 
     return dialog;
   }
