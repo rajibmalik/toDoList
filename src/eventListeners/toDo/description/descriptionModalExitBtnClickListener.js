@@ -10,7 +10,7 @@ export const descriptionModalExitBtnClickListener = (function () {
 
       if (
         e.target.classList.contains("exitBtn") ||
-        !descriptionContent.contains(e.target)
+        (descriptionContent && !descriptionContent.contains(e.target))
       ) {
         const descriptionModal = e.target.closest(".descriptionModal");
 
