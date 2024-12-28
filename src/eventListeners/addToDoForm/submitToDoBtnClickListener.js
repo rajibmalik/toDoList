@@ -1,8 +1,8 @@
-import { ToDo } from "../../ToDo";
+import { ToDo } from "../../models/ToDo";
 import { renderToDo } from "../../renderToDo";
 import { toDoFormExtractor } from "../../toDoFormExtractor";
-import { ToDoManagerSingleton } from "../../ToDoManagerSingleton";
-const toDoManager = ToDoManagerSingleton.getInstance();
+import { ToDoGroupManagerSingleton } from "../../models/ToDoGroupManagerSingleton";
+const toDoManager = ToDoGroupManagerSingleton.getInstance();
 
 export const submitToDoBtnClickListener = (function () {
   const mainContainer = document.querySelector("#mainContainer");
@@ -33,7 +33,8 @@ export const submitToDoBtnClickListener = (function () {
 
         // Render the ToDo DOM element
         renderToDo.render(toDo);
-        toDoManager.addToDo(toDo);
+        //
+        // toDoManager.addToDo(toDo);
 
         closeModal();
       }

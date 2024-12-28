@@ -1,6 +1,6 @@
 import { deleteToast } from "./deleteToast";
-import { ToDoManagerSingleton } from "../../../ToDoManagerSingleton";
-const toDoManager = ToDoManagerSingleton.getInstance();
+import { ToDoGroupManagerSingleton } from "../../../models/ToDoGroupManagerSingleton";
+const toDoManager = ToDoGroupManagerSingleton.getInstance();
 
 export const deleteBtnClickListener = (function () {
   function createListener(element) {

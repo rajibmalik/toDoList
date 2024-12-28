@@ -1,7 +1,7 @@
-import { ToDoManagerSingleton } from "./ToDoManagerSingleton";
+import { ToDoGroupManagerSingleton } from "./models/ToDoGroupManagerSingleton";
 
 export const toDoDOMParser = (function () {
-  const toDoManager = ToDoManagerSingleton.getInstance();
+  const toDoManager = ToDoGroupManagerSingleton.getInstance();
 
   function parse(toDoDOMElement) {
     const toDoObject = findToDoObject(toDoDOMElement);

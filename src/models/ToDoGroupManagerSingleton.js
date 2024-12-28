@@ -1,0 +1,66 @@
+// TodoManagerSingleton.js
+export class ToDoGroupManagerSingleton {
+  #toDoGroups = [];
+  static #instance = null;
+
+  constructor() {
+    if (ToDoGroupManagerSingleton.#instance) {
+      throw new Error("Use ToDoManagerSingleton.getInstance() instead");
+    }
+    ToDoGroupManagerSingleton.#instance = this;
+  }
+
+  static getInstance() {
+    if (!ToDoGroupManagerSingleton.#instance) {
+      ToDoGroupManagerSingleton.#instance = new ToDoGroupManagerSingleton();
+    }
+    return ToDoGroupManagerSingleton.#instance;
+  }
+
+  getToDoGroups() {
+    return this.#toDoGroups;
+  }
+
+  addToDoGroup(toDoGroup) {
+    const group = this.#toDoGroups.some(
+      (group) => group.getName() === toDoGroup.getName()
+    );
+
+    console.log(group);
+
+    if (group) {
+      console.log("Not adding duplicate group");
+      return false;
+    }
+
+    this.#toDoGroups.push(toDoGroup);
+
+    return true;
+  }
+
+  getToDoGroup(name) {
+    const toDoGroup = this.#toDoGroups.find((item) => item.getName() === name);
+    return toDoGroup;
+  }
+
+  deleteToDo(toDoGroupName) {
+    const index = this.#toDoGroups.findIndex(
+      (item) => item.getId() === toDo.getId()
+    );
+
+    if (index !== -1) {
+      this.#toDoGroups.splice(index, 1);
+    }
+  }
+
+  // setIsComplete(id) {
+  //   const toDo = this.getToDo(id);
+  //   toDo.setIsComplete(!toDo.getIsComplete());
+  // }
+
+  // logToDos() {
+  //   this.#toDoGroups.forEach((toDo) => {
+  //     console.log(toDo);
+  //   });
+  // }
+}

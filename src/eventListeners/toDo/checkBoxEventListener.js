@@ -1,4 +1,4 @@
-import { ToDoManagerSingleton } from "../../ToDoManagerSingleton";
+import { ToDoGroupManagerSingleton } from "../../models/ToDoGroupManagerSingleton";
 
 export const checkBoxEventListener = (function () {
   const content = document.querySelector("#content");
@@ -26,7 +26,7 @@ export const checkBoxEventListener = (function () {
             (element) => element?.classList.toggle("completed")
           );
 
-          const toDoManager = ToDoManagerSingleton.getInstance();
+          const toDoManager = ToDoGroupManagerSingleton.getInstance();
           const todo = toDoManager.getToDo(parseInt(toDoContainer.id));
         }
       }

@@ -1,5 +1,5 @@
 import { descriptionBtnModal } from "../../../modals/descriptionBtnModal";
-import { ToDo } from "../../../ToDo";
+import { ToDo } from "../../../models/ToDo";
 import { toDoDOMParser } from "../../../toDoDOMParser";
 
 export const descriptionBtnClickListener = (function () {
