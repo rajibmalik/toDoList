@@ -1,12 +1,12 @@
 export const addToDoBtnClickListener = (function () {
-  const navBar = document.querySelector("#navBar");
+  const sideBar = document.querySelector("#sideBar");
   const mainContainer = document.querySelector("#mainContainer");
   const addToDoModal = document.querySelector("dialog");
 
   function createListener() {
-    navBar.addEventListener("click", (e) => {
+    sideBar.addEventListener("click", (e) => {
       if (e.target.classList.contains("addToDoBtn")) {
-        if (navBar) {
+        if (sideBar) {
           addToDoModal.showModal();
           addToDoModal.classList.add("open");
           mainContainer.classList.add("blur");

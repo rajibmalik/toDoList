@@ -13,14 +13,7 @@ export const deleteBtnClickListener = (function () {
         toDoElement.remove();
         deleteToast.addToDOM(toDoElement);
 
-        console.log("before");
-        toDoManager.logToDos();
-
-        const toDoObject = toDoManager.getToDo(toDoElement.id);
-        toDoManager.deleteToDo(toDoObject);
-
-        console.log("after");
-        toDoManager.logToDos();
+        // delete ToDo
       }
     });
   }

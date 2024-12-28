@@ -1,5 +1,5 @@
 import { ToDo } from "../../models/ToDo";
-import { renderToDo } from "../../renderToDo";
+import { renderToDo } from "../../renders/renderToDo";
 import { toDoFormExtractor } from "../../toDoFormExtractor";
 import { ToDoGroupManagerSingleton } from "../../models/ToDoGroupManagerSingleton";
 const toDoManager = ToDoGroupManagerSingleton.getInstance();
