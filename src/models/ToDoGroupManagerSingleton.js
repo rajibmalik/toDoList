@@ -22,13 +22,9 @@ export class ToDoGroupManagerSingleton {
   }
 
   addToDoGroup(toDoGroup) {
-    const group = this.#toDoGroups.some(
-      (group) => group.getName() === toDoGroup.getName()
-    );
+    const existingGroup = this.#toDoGroups.some((group) => group === toDoGroup);
 
-    console.log(group);
-
-    if (group) {
+    if (existingGroup) {
       console.log("Not adding duplicate group");
       return false;
     }
@@ -38,15 +34,20 @@ export class ToDoGroupManagerSingleton {
     return true;
   }
 
-  getToDoGroup(name) {
-    const toDoGroup = this.#toDoGroups.find((item) => item.getName() === name);
+  getToDoGroup(toDoGroupName) {
+    const toDoGroup = this.#toDoGroups.find(
+      (item) => item.getName() === toDoGroupName
+    );
+
+    if (!toDoGroup) {
+      console.log(`Could not find the toDoGroup ${toDoGroupName}`);
+      return null;
+    }
     return toDoGroup;
   }
 
-  deleteToDo(toDoGroupName) {
-    const index = this.#toDoGroups.findIndex(
-      (item) => item.getId() === toDo.getId()
-    );
+  deleteToDoGroup(toDoGroup) {
+    const index = this.#toDoGroups.findIndex((item) => item === toDoGroup);
 
     if (index !== -1) {
       this.#toDoGroups.splice(index, 1);

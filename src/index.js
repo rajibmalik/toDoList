@@ -43,6 +43,8 @@ toDoGroupManager.addToDoGroup(toDoGroup1);
 toDoGroupManager.addToDoGroup(toDoGroup1);
 toDoGroupManager.addToDoGroup(toDoGroup2);
 
+toDoGroupManager.deleteToDoGroup(toDoGroup1);
+
 console.log(toDoGroupManager);
 
 // let toDos = manager.getToDos();
