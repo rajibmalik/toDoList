@@ -452,7 +452,7 @@ body {
   align-items: center;
   height: 100%;
   width: 20%;
-  gap: 35px;
+  gap: 40px;
 }
 
 .toDoDescriptionBtnContainer {
@@ -573,14 +573,91 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 5%; */
   height: 100%;
+  width: 100%;
 }
 
 .toDoEditBtn,
 .toDoDeleteBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 17.5px;
   height: 17.5px;
+  outline: none;
+  border: none;
+  background-color: #e5e4e2;
+}
+
+.toDoDeleteBtn:hover {
+  color: #73c2fb;
+  cursor: pointer;
+}
+
+.toast {
+  visibility: hidden;
+  width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  /* z-index: 1; */
+  left: 50%;
+  bottom: 30px;
+}
+
+.toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 4.5s;
+  animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 /* Add ToDo Btn */

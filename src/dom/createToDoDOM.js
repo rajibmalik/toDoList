@@ -116,6 +116,7 @@ export const createToDoDOM = (function () {
     deleteButtonContainer.classList.add("toDoDeleteBtnContainer");
 
     const deleteButton = document.createElement("button");
+    deleteButton.classList.add("fa-solid", "fa-trash");
     deleteButton.classList.add("toDoDeleteBtn");
 
     deleteButtonContainer.appendChild(deleteButton);

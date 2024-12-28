@@ -6,7 +6,6 @@ export const descriptionModalExitBtnClickListener = (function () {
       const descriptionContent = document.querySelector(
         ".descriptionModalWrapper"
       );
-      console.log(descriptionContent);
 
       if (
         e.target.classList.contains("exitBtn") ||
