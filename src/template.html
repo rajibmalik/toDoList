@@ -11,7 +11,39 @@
   </head>
   <body>
     <div id="mainContainer">
-      <nav id="sideBar"></nav>
+      <nav id="sideBar">
+        <ul id="mainList">
+          <li>
+            <button class="mainListBtn">
+              <i class="fa-solid fa-calendar-days"></i>All
+            </button>
+          </li>
+          <li>
+            <button class="mainListBtn">
+              <i class="fa-solid fa-calendar-day"></i>Today
+            </button>
+          </li>
+          <li>
+            <button class="mainListBtn">
+              <i class="fa-solid fa-calendar-week"></i>Week
+            </button>
+          </li>
+          <li>
+            <button class="mainListBtn">
+              <i class="fa-solid fa-square-check"></i>Completed
+            </button>
+          </li>
+          <li>
+            <button class="mainListBtn">
+              <i class="fa-solid fa-star"></i>Important
+            </button>
+          </li>
+        </ul>
+        <ul id="projects">
+          <h3>Projects</h3>
+        </ul>
+      </nav>
+
       <div id="content">
         <div id="toDoList"></div>
       </div>
@@ -23,79 +55,79 @@
           <h3 id="addToDoHeader">Create a new To Do</h3>
           <button class="fa-solid fa-x" id="addToDoExitBtn"></button>
         </div>
-
-        <form id="addToDoForm" method="dialog">
-          <div id="inputContainer">
-            <textarea
+      </div>
+      <form id="addToDoForm" method="dialog">
+        <div id="inputContainer">
+          <textarea
+            class="inputBox"
+            id="titleInput"
+            type="text"
+            placeholder="Title: Buy groceries"
+            maxlength="40"
+            required
+          ></textarea>
+          <textarea
+            class="inputBox"
+            id="detailsInput"
+            type="text"
+            placeholder="Details: e.g avocado, rice, lettuce"
+            maxlength="180"
+            required
+          ></textarea>
+        </div>
+        <div id="dueDatePriorityContainer">
+          <div id="dueDateInputContainer">
+            <p id="dueDateText">Due Date:</p>
+            <input
               class="inputBox"
-              id="titleInput"
-              type="text"
-              placeholder="Title: Buy groceries"
-              maxlength="40"
+              id="dueDateInput"
+              type="date"
+              max="100"
               required
-            ></textarea>
-            <textarea
-              class="inputBox"
-              id="detailsInput"
-              type="text"
-              placeholder="Details: e.g avocado, rice, lettuce"
-              maxlength="180"
-              required
-            ></textarea>
-            <div id="dueDatePriorityContainer">
-              <div id="dueDateInputContainer">
-                <p id="dueDateText">Due Date:</p>
-              <input
-                class="inputBox"
-                id="dueDateInput"
-                type="date"
-                max="100"
-                required
-              ></input>
-            </div>
-
-            <div id="priorityContainer">
-          
-              <p id="priorityError">Please select a priority</p>
-              <div id="priorityBtnContainer">
-              <p id="priorityText">Priority:</p>
-              <button
-                class="inputBox priorityBtn"
-                id="priorityInputLow"
-                type="button"
-                max="100"
-                value="Low"
-                data-clicked="false"
-              >LOW</button>
-              
-              <button
+            />
+          </div>
+        </div>
+        <div id="priorityContainer">
+          <p id="priorityError">Please select a priority</p>
+          <div id="priorityBtnContainer">
+            <p id="priorityText">Priority:</p>
+            <button
+              class="inputBox priorityBtn"
+              id="priorityInputLow"
+              type="button"
+              max="100"
+              value="Low"
+              data-clicked="false"
+            >
+              LOW
+            </button>
+            <button
               class="inputBox priorityBtn"
               id="priorityInputMedium"
               type="button"
               max="100"
               value="Medium"
               data-clicked="false"
-            >MEDIUM</button>
-
+            >
+              MEDIUM
+            </button>
             <button
-            class="inputBox priorityBtn"
-            id="priorityInputHigh"
-            type="button"
-            max="100"
-            value="High"
-            data-clicked="false"
-          >HIGH</button>
-            </div>
+              class="inputBox priorityBtn"
+              id="priorityInputHigh"
+              type="button"
+              max="100"
+              value="High"
+              data-clicked="false"
+            >
+              HIGH
+            </button>
           </div>
-            </div>
-          </div>
-
-          <div id="addToDoSubmitBtnContainer">
-            <button id="addToDoCloseBtn">CLOSE</button>
-            <input id="addToDoSubmitBtn" type="submit" id="submit" value="ADD" />
-          </div>
-        </form>
-      </div>
+        </div>
+        <div id="addToDoSubmitBtnContainer">
+          <button id="addToDoCloseBtn">CLOSE</button>
+          <input id="addToDoSubmitBtn" type="submit" id="submit" value="ADD" />
+        </div>
+      </form>
     </dialog>
   </body>
 </html>
