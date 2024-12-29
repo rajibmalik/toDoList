@@ -10,6 +10,7 @@ import { ToDoGroupManagerSingleton } from "./models/ToDoGroupManagerSingleton.js
 import { ToDoGroup } from "./models/ToDoGroup.js";
 import "./styles.css";
 import { descriptionModalExitBtnClickListener } from "./eventListeners/toDo/description/descriptionModalExitBtnClickListener.js";
+import { allClickListener } from "./eventListeners/nav/mainNav/allClickListener.js";
 
 const content = document.querySelector("#content");
 
@@ -32,6 +33,7 @@ renderNavBar.addModalEventListeners();
 checkBoxEventListener.createListener();
 descriptionBtnClickListener.createListener();
 descriptionModalExitBtnClickListener.createListener();
+allClickListener.createListener();
 
 const toDoGroup1 = new ToDoGroup("Programming");
 toDoGroup1.addToDo(toDo);
@@ -40,10 +42,8 @@ toDoGroup2.addToDo(toDo2);
 
 const toDoGroupManager = ToDoGroupManagerSingleton.getInstance();
 toDoGroupManager.addToDoGroup(toDoGroup1);
-toDoGroupManager.addToDoGroup(toDoGroup1);
-toDoGroupManager.addToDoGroup(toDoGroup2);
 
-toDoGroupManager.deleteToDoGroup(toDoGroup1);
+toDoGroupManager.addToDoGroup(toDoGroup2);
 
 console.log(toDoGroupManager);
 

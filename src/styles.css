@@ -227,6 +227,11 @@ li {
   flex-direction: column;
 }
 
+#contentHeaderContainer {
+  display: flex;
+  background-color: white;
+}
+
 .inputBox {
   background-color: #e5e4e2;
   outline: none;

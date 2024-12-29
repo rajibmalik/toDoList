@@ -46,6 +46,14 @@ export class ToDoGroupManagerSingleton {
     return toDoGroup;
   }
 
+  getAllToDos() {
+    const allToDos = this.#toDoGroups.flatMap((toDoGroup) =>
+      toDoGroup.getToDos()
+    );
+
+    return allToDos;
+  }
+
   deleteToDoGroup(toDoGroup) {
     const index = this.#toDoGroups.findIndex((item) => item === toDoGroup);
 
