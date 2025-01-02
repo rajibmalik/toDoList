@@ -8,6 +8,7 @@ export const priorityBtnClickListener = (function () {
   function createListener() {
     addToDoForm.addEventListener("click", (e) => {
       console.log("PRIORITY LISTENER");
+      console.log(e);
 
       if (e.target.classList.contains("priorityBtn")) {
         const clickedButton = e.target;

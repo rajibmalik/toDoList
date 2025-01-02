@@ -179,7 +179,7 @@ li {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 80px;
+  height: 100%;
 }
 
 #addToDoHeaderContainer {

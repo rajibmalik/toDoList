@@ -56,79 +56,85 @@
           <h3 id="addToDoHeader">Create a new To Do</h3>
           <button class="fa-solid fa-x" id="addToDoExitBtn"></button>
         </div>
-      </div>
-      <form id="addToDoForm" method="dialog">
-        <div id="inputContainer">
-          <textarea
-            class="inputBox"
-            id="titleInput"
-            type="text"
-            placeholder="Title: Buy groceries"
-            maxlength="40"
-            required
-          ></textarea>
-          <textarea
-            class="inputBox"
-            id="detailsInput"
-            type="text"
-            placeholder="Details: e.g avocado, rice, lettuce"
-            maxlength="180"
-            required
-          ></textarea>
-        </div>
-        <div id="dueDatePriorityContainer">
-          <div id="dueDateInputContainer">
-            <p id="dueDateText">Due Date:</p>
-            <input
+
+        <form id="addToDoForm" method="dialog">
+          <div id="inputContainer">
+            <textarea
               class="inputBox"
-              id="dueDateInput"
-              type="date"
-              max="100"
+              id="titleInput"
+              type="text"
+              placeholder="Title: Buy groceries"
+              maxlength="40"
               required
+            ></textarea>
+            <textarea
+              class="inputBox"
+              id="detailsInput"
+              type="text"
+              placeholder="Details: e.g avocado, rice, lettuce"
+              maxlength="180"
+              required
+            ></textarea>
+          </div>
+          <div id="dueDatePriorityContainer">
+            <div id="dueDateInputContainer">
+              <p id="dueDateText">Due Date:</p>
+              <input
+                class="inputBox"
+                id="dueDateInput"
+                type="date"
+                max="100"
+                required
+              />
+            </div>
+          </div>
+          <div id="priorityContainer">
+            <p id="priorityError">Please select a priority</p>
+            <div id="priorityBtnContainer">
+              <p id="priorityText">Priority:</p>
+              <button
+                class="inputBox priorityBtn"
+                id="priorityInputLow"
+                type="button"
+                max="100"
+                value="Low"
+                data-clicked="false"
+              >
+                LOW
+              </button>
+              <button
+                class="inputBox priorityBtn"
+                id="priorityInputMedium"
+                type="button"
+                max="100"
+                value="Medium"
+                data-clicked="false"
+              >
+                MEDIUM
+              </button>
+              <button
+                class="inputBox priorityBtn"
+                id="priorityInputHigh"
+                type="button"
+                max="100"
+                value="High"
+                data-clicked="false"
+              >
+                HIGH
+              </button>
+            </div>
+          </div>
+          <div id="addToDoSubmitBtnContainer">
+            <button id="addToDoCloseBtn">CLOSE</button>
+            <input
+              id="addToDoSubmitBtn"
+              type="submit"
+              id="submit"
+              value="ADD"
             />
           </div>
-        </div>
-        <div id="priorityContainer">
-          <p id="priorityError">Please select a priority</p>
-          <div id="priorityBtnContainer">
-            <p id="priorityText">Priority:</p>
-            <button
-              class="inputBox priorityBtn"
-              id="priorityInputLow"
-              type="button"
-              max="100"
-              value="Low"
-              data-clicked="false"
-            >
-              LOW
-            </button>
-            <button
-              class="inputBox priorityBtn"
-              id="priorityInputMedium"
-              type="button"
-              max="100"
-              value="Medium"
-              data-clicked="false"
-            >
-              MEDIUM
-            </button>
-            <button
-              class="inputBox priorityBtn"
-              id="priorityInputHigh"
-              type="button"
-              max="100"
-              value="High"
-              data-clicked="false"
-            >
-              HIGH
-            </button>
-          </div>
-        </div>
-        <div id="addToDoSubmitBtnContainer">
-          <button id="addToDoCloseBtn">CLOSE</button>
-          <input id="addToDoSubmitBtn" type="submit" id="submit" value="ADD" />
-        </div>
-      </form>
+        </form>
+      </div>
     </dialog>
   </body>
 </html>
