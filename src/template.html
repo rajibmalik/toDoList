@@ -13,35 +13,47 @@
     <div id="mainContainer">
       <nav id="sideBar">
         <ul id="mainList">
-          <li>
+          <li class="mainList">
             <button class="mainListBtn" id="allBtn">
               <i class="fa-solid fa-calendar-days"></i>All
             </button>
           </li>
-          <li>
+          <li class="mainList">
             <button class="mainListBtn">
               <i class="fa-solid fa-calendar-day"></i>Today
             </button>
           </li>
-          <li>
+          <li class="mainList">
             <button class="mainListBtn">
               <i class="fa-solid fa-calendar-week"></i>Week
             </button>
           </li>
-          <li>
+          <li class="mainList">
             <button class="mainListBtn">
               <i class="fa-solid fa-square-check"></i>Completed
             </button>
           </li>
-          <li>
+          <li class="mainList">
             <button class="mainListBtn">
               <i class="fa-solid fa-star"></i>Important
             </button>
           </li>
         </ul>
-        <ul id="projects">
-          <h3>Projects</h3>
-        </ul>
+
+        <div id="projectSectionContainer">
+          <div id="projectsHeaderContainer">
+            <h3>Projects</h3>
+          </div>
+          <div id="projectsContainer ">
+            <ul id="projects">
+              <button type="button" class="projectsList">Project one</button>
+              <button type="button" class="projectsList">Project two</button>
+            </ul>
+          </div>
+          <button type="button" id="addProjectBtn">
+            <i class="fa-solid fa-plus" id="addProjectIcon"></i>New Project
+          </button>
+        </div>
       </nav>
 
       <div id="content">

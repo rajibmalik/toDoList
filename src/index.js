@@ -11,6 +11,7 @@ import { ToDoGroup } from "./models/ToDoGroup.js";
 import "./styles.css";
 import { descriptionModalExitBtnClickListener } from "./eventListeners/toDo/description/descriptionModalExitBtnClickListener.js";
 import { allClickListener } from "./eventListeners/nav/mainNav/allClickListener.js";
+import { addProjectClickListener } from "./eventListeners/nav/projects/addProjectClickListener.js";
 
 const content = document.querySelector("#content");
 
@@ -34,6 +35,7 @@ checkBoxEventListener.createListener();
 descriptionBtnClickListener.createListener();
 descriptionModalExitBtnClickListener.createListener();
 allClickListener.createListener();
+addProjectClickListener.createListener();
 
 const toDoGroup1 = new ToDoGroup("Programming");
 toDoGroup1.addToDo(toDo);

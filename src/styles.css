@@ -125,7 +125,7 @@ body {
   padding: 0;
 }
 
-li {
+.mainList {
   display: flex;
   list-style: none;
   width: 100%;
@@ -142,6 +142,62 @@ li {
   border-radius: 5px;
   gap: 10px;
   font-size: 1.2rem;
+}
+
+/* Project section */
+
+#projectsSectionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#projects {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  gap: 0;
+}
+
+#projectsContainer,
+#addProjectBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.projectsList {
+  list-style: none;
+  margin: none;
+  border: none;
+  width: 100%;
+  background-color: green;
+}
+
+#addProjectBtn {
+  gap: 5px;
+  background-color: brown;
+  border: none;
+  cursor: pointer;
+  transform: all 0.3s ease;
+  width: 100%;
+  padding: 5px;
+}
+
+#addProjectIcon {
+  padding: 2px 4px;
+}
+
+#addProjectBtn:hover {
+  color: blue;
+}
+
+#addProjectBtn:hover #addProjectIcon {
+  background-color: red;
+  color: white;
+  border-radius: 10px;
 }
 
 /* Add ToDo dialog/modal */
