@@ -13,6 +13,7 @@ import { descriptionModalExitBtnClickListener } from "./eventListeners/toDo/desc
 import { allClickListener } from "./eventListeners/nav/mainNav/allClickListener.js";
 import { addProjectClickListener } from "./eventListeners/nav/projects/addProjectClickListener.js";
 import { closeProjectClickListener } from "./eventListeners/nav/projects/closeProjectClickListener.js";
+import { submitProjectClickListener } from "./eventListeners/nav/projects/submitProjectClickListener.js";
 
 const content = document.querySelector("#content");
 
@@ -38,6 +39,7 @@ descriptionModalExitBtnClickListener.createListener();
 allClickListener.createListener();
 addProjectClickListener.createListener();
 closeProjectClickListener.createListener();
+submitProjectClickListener.createListener();
 
 const toDoGroup1 = new ToDoGroup("Programming");
 toDoGroup1.addToDo(toDo);

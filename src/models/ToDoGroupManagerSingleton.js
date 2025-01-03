@@ -22,7 +22,9 @@ export class ToDoGroupManagerSingleton {
   }
 
   addToDoGroup(toDoGroup) {
-    const existingGroup = this.#toDoGroups.some((group) => group === toDoGroup);
+    const existingGroup = this.#toDoGroups.some(
+      (group) => group.getName() === toDoGroup.getName()
+    );
 
     if (existingGroup) {
       console.log("Not adding duplicate group");
