@@ -15,6 +15,7 @@ import { addProjectClickListener } from "./eventListeners/nav/projects/addProjec
 import { closeProjectClickListener } from "./eventListeners/nav/projects/closeProjectClickListener.js";
 import { submitProjectClickListener } from "./eventListeners/nav/projects/submitProjectClickListener.js";
 import { renderContent } from "./renders/renderContent.js";
+import { projectClickListener } from "./eventListeners/toDoGroup/projectClickListener.js";
 
 const content = document.querySelector("#content");
 
@@ -38,10 +39,12 @@ renderNavBar.addModalEventListeners();
 checkBoxEventListener.createListener();
 descriptionBtnClickListener.createListener();
 descriptionModalExitBtnClickListener.createListener();
+
 allClickListener.createListener();
 addProjectClickListener.createListener();
 closeProjectClickListener.createListener();
 submitProjectClickListener.createListener();
+projectClickListener.createListener();
 
 const toDoGroup1 = new ToDoGroup("Programming");
 toDoGroup1.addToDo(toDo);
