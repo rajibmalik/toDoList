@@ -1,5 +1,3 @@
-import { addToDoBtn } from "../dom/addToDoBtn";
-import { addToDoBtnClickListener } from "../eventListeners/addToDoForm/addToDoBtnClickListener";
 import { addToDoExitBtnClickListener } from "../eventListeners/addToDoForm/addToDoExitBtnClickListener";
 import { textAreaKeydown } from "../eventListeners/addToDoForm/textAreaKeydownListener";
 import { submitToDoBtnClickListener } from "../eventListeners/addToDoForm/submitToDoBtnClickListener";
@@ -10,13 +8,6 @@ export const renderNavBar = (function () {
 
   function render() {}
 
-  function renderAddToDoBtn() {
-    const btn = addToDoBtn.create();
-    sideBar.appendChild(btn);
-
-    addToDoBtnClickListener.createListener();
-  }
-
   function addModalEventListeners() {
     addToDoExitBtnClickListener.createListener();
     textAreaKeydown.createListener();
@@ -24,5 +15,5 @@ export const renderNavBar = (function () {
     priorityBtnClickListener.createListener();
   }
 
-  return { renderAddToDoBtn, addModalEventListeners };
+  return { addModalEventListeners };
 })();

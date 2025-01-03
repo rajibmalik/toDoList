@@ -14,6 +14,7 @@ import { allClickListener } from "./eventListeners/nav/mainNav/allClickListener.
 import { addProjectClickListener } from "./eventListeners/nav/projects/addProjectClickListener.js";
 import { closeProjectClickListener } from "./eventListeners/nav/projects/closeProjectClickListener.js";
 import { submitProjectClickListener } from "./eventListeners/nav/projects/submitProjectClickListener.js";
+import { renderContent } from "./renders/renderContent.js";
 
 const content = document.querySelector("#content");
 
@@ -26,11 +27,12 @@ const toDo2 = new ToDo(
   "HIGH"
 );
 
+renderContent.renderAddToDoBtn();
+
 renderToDo.render(toDo);
 
 renderToDo.render(toDo2);
 
-renderNavBar.renderAddToDoBtn();
 renderNavBar.addModalEventListeners();
 
 checkBoxEventListener.createListener();
