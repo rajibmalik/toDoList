@@ -9,11 +9,14 @@ const toDoHeader = document.querySelector("#contentHeaderContainer");
 export const renderToDoGroup = (function () {
   function renderAllToDos() {
     clearToDoGroup();
-    renderContent.renderToDoGroupHeader("All ToDos");
+    console.log("render all");
 
     const allToDos = toDoManager.getAllToDos();
+    console.log("here");
+    console.log(allToDos);
 
     renderToDoGroup(allToDos);
+    renderContent.renderToDoGroupHeader("All");
   }
 
   function renderToDoGroup(toDosArray) {

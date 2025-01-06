@@ -6,10 +6,11 @@ export class ToDo {
   #notes;
   #checkList = [];
   #isComplete;
+  #project;
   static #id = 1;
   #instanceId;
 
-  constructor(title, description, dueDate, priority, notes) {
+  constructor(title, description, dueDate, priority, project, notes) {
     this.#title = title;
     this.#description = description;
     this.#dueDate = dueDate;
@@ -17,6 +18,7 @@ export class ToDo {
     this.#notes = notes;
     this.#instanceId = ToDo.#id++;
     this.#isComplete = false;
+    this.#project = project;
   }
 
   getTitle() {
@@ -51,6 +53,10 @@ export class ToDo {
     return this.#isComplete;
   }
 
+  getProject() {
+    return this.#project;
+  }
+
   setTitle(title) {
     this.#title = title;
   }
@@ -77,6 +83,10 @@ export class ToDo {
 
   setIsComplete(isComplete) {
     this.#isComplete = isComplete;
+  }
+
+  setProject(project) {
+    this.#project = project;
   }
 
   toString() {

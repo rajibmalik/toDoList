@@ -16,6 +16,7 @@ import { closeProjectClickListener } from "./eventListeners/nav/projects/closePr
 import { submitProjectClickListener } from "./eventListeners/nav/projects/submitProjectClickListener.js";
 import { renderContent } from "./renders/renderContent.js";
 import { projectClickListener } from "./eventListeners/toDoGroup/projectClickListener.js";
+import { renderToDoGroup } from "./renders/renderToDoGroup.js";
 
 const content = document.querySelector("#content");
 
@@ -29,10 +30,11 @@ const toDo2 = new ToDo(
 );
 
 renderContent.renderAddToDoBtn();
+renderToDoGroup.renderAllToDos();
+// renderContent.renderToDoGroupHeader("All");
+// renderToDo.render(toDo);
 
-renderToDo.render(toDo);
-
-renderToDo.render(toDo2);
+// renderToDo.render(toDo2);
 
 renderNavBar.addModalEventListeners();
 
@@ -46,17 +48,17 @@ closeProjectClickListener.createListener();
 submitProjectClickListener.createListener();
 projectClickListener.createListener();
 
-const toDoGroup1 = new ToDoGroup("Programming");
-toDoGroup1.addToDo(toDo);
-const toDoGroup2 = new ToDoGroup("Hobbies");
-toDoGroup2.addToDo(toDo2);
+// const toDoGroup1 = new ToDoGroup("Programming");
+// toDoGroup1.addToDo(toDo);
+// const toDoGroup2 = new ToDoGroup("Hobbies");
+// toDoGroup2.addToDo(toDo2);
 
-const toDoGroupManager = ToDoGroupManagerSingleton.getInstance();
-toDoGroupManager.addToDoGroup(toDoGroup1);
+// const toDoGroupManager = ToDoGroupManagerSingleton.getInstance();
+// toDoGroupManager.addToDoGroup(toDoGroup1);
 
-toDoGroupManager.addToDoGroup(toDoGroup2);
+// toDoGroupManager.addToDoGroup(toDoGroup2);
 
-console.log(toDoGroupManager);
+// console.log(toDoGroupManager);
 
 // let toDos = manager.getToDos();
 // console.log("HERE" + toDos[0].getId());
