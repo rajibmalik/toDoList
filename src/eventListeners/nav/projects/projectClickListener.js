@@ -1,5 +1,5 @@
-import { renderToDoGroup } from "../../renders/renderToDoGroup";
-import { ToDoGroupManagerSingleton } from "../../models/ToDoGroupManagerSingleton";
+import { renderToDoGroup } from "../../../renders/renderToDoGroup";
+import { ToDoGroupManagerSingleton } from "../../../models/ToDoGroupManagerSingleton";
 const manager = ToDoGroupManagerSingleton.getInstance();
 
 const projectSectionContainer = document.querySelector(

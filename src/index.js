@@ -16,7 +16,7 @@ import { addProjectClickListener } from "./eventListeners/nav/projects/addProjec
 import { closeProjectClickListener } from "./eventListeners/nav/projects/closeProjectClickListener.js";
 import { submitProjectClickListener } from "./eventListeners/nav/projects/submitProjectClickListener.js";
 import { renderContent } from "./renders/renderContent.js";
-import { projectClickListener } from "./eventListeners/toDoGroup/projectClickListener.js";
+import { projectClickListener } from "./eventListeners/nav/projects/projectClickListener.js";
 import { renderToDoGroup } from "./renders/renderToDoGroup.js";
 
 const content = document.querySelector("#content");

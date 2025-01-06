@@ -1,4 +1,6 @@
 import { renderProject } from "../../../renders/renderProject";
+import { ToDoGroupManagerSingleton } from "../../../models/ToDoGroupManagerSingleton";
+const toDoManager = ToDoGroupManagerSingleton.getInstance();
 
 export const submitProjectClickListener = (function () {
   const content = document.querySelector("#content");
@@ -11,11 +13,10 @@ export const submitProjectClickListener = (function () {
         const modal = content.querySelector("#addProjectModal");
         if (modal) {
           const name = content.querySelector("#addProjectNameInput").value;
-
-          if (name != "") {
+          const existingGroup = toDoManager.getToDoGroup(name);
+          if (name != "" && !existingGroup) {
             renderProject.render(name);
           }
-
           modal.remove();
         }
       }
