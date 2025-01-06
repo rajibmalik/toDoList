@@ -27,10 +27,13 @@ export class ToDoGroup {
     this.#toDos.push(toDo);
   }
 
-  deleteToDo(toDo) {
-    const index = this.#toDos.findIndex((item) => item.getId() === toDo);
+  deleteToDo(id) {
+    id = parseInt(id);
+
+    const index = this.#toDos.findIndex((item) => item.getId() === id);
 
     if (index !== -1) {
+      console.log("deleting");
       this.#toDos.splice(index, 1);
     }
   }

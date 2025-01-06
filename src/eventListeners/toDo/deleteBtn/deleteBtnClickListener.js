@@ -3,17 +3,23 @@ import { ToDoGroupManagerSingleton } from "../../../models/ToDoGroupManagerSingl
 const toDoManager = ToDoGroupManagerSingleton.getInstance();
 
 export const deleteBtnClickListener = (function () {
-  function createListener(element) {
-    const btn = element.querySelector(".toDoDeleteBtn");
+  const content = document.querySelector("#content");
 
-    btn.addEventListener("click", (e) => {
-      const toDoElement = e.target.closest(".toDoContainer");
+  function createListener() {
+    content.addEventListener("click", (e) => {
+      if (e.target.classList.contains("toDoDeleteBtn")) {
+        const toDoElement = e.target.closest(".toDoContainer");
 
-      if (toDoElement) {
-        toDoElement.remove();
-        deleteToast.addToDOM(toDoElement);
+        if (toDoElement) {
+          const projectName = document
+            .querySelector("#toDoGroupHeader")
+            .textContent.toLowerCase();
 
-        // delete ToDo
+          toDoElement.remove();
+          deleteToast.addToDOM(toDoElement);
+          const toDoGroup = toDoManager.getToDoGroup(projectName);
+          toDoGroup.deleteToDo(toDoElement.id);
+        }
       }
     });
   }

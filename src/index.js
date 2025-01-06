@@ -2,6 +2,7 @@ import { ToDo } from "./models/ToDo.js";
 // import { createToDoDOM } from "./toDoDOMRenderers/createToDoDOM.js";
 import { checkBoxEventListener } from "./eventListeners/toDo/checkBoxEventListener.js";
 import { descriptionBtnClickListener } from "./eventListeners/toDo/description/descriptionBtnClickListener.js";
+import { deleteBtnClickListener } from "./eventListeners/toDo/deleteBtn/deleteBtnClickListener.js";
 // import { descriptionModalExitBtnClickListener } from "./eventListeners/toDo/description/descriptionModalExitBtnClickListener.js";
 import { renderToDo } from "./renders/renderToDo.js";
 import { renderNavBar } from "./renders/renderNavBar.js";
@@ -40,6 +41,7 @@ renderNavBar.addModalEventListeners();
 
 checkBoxEventListener.createListener();
 descriptionBtnClickListener.createListener();
+deleteBtnClickListener.createListener();
 descriptionModalExitBtnClickListener.createListener();
 
 allClickListener.createListener();
