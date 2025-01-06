@@ -1,4 +1,5 @@
 import { ToDoGroupManagerSingleton } from "../../models/ToDoGroupManagerSingleton";
+const toDoManager = ToDoGroupManagerSingleton.getInstance();
 
 export const checkBoxEventListener = (function () {
   const content = document.querySelector("#content");
@@ -9,8 +10,6 @@ export const checkBoxEventListener = (function () {
         // Find the parent toDoContainer of the checkbox
         const toDoContainer = e.target.closest(".toDoContainer");
         const toDoCheckBox = toDoContainer.querySelector(".toDoCheckBox");
-        const toDoCheckBoxSpan =
-          toDoContainer.querySelector(".toDoCheckBoxSpan");
 
         if (toDoContainer) {
           toDoCheckBox.checked = !toDoCheckBox.checked;
@@ -26,8 +25,23 @@ export const checkBoxEventListener = (function () {
             (element) => element?.classList.toggle("completed")
           );
 
-          const toDoManager = ToDoGroupManagerSingleton.getInstance();
-          const todo = toDoManager.getToDo(parseInt(toDoContainer.id));
+          const projectName = document
+            .querySelector("#toDoGroupHeader")
+            .textContent.toLowerCase();
+
+          console.log("projectName: ", projectName);
+
+          const id = toDoContainer.id;
+
+          console.log("ID: ", id);
+          console.log("ID TYPE: ", typeof id);
+
+          const toDoGroup = toDoManager.getToDoGroup(projectName);
+          console.log("toDoGroup: ", toDoGroup);
+          const toDo = toDoGroup.getToDo(id);
+          console.log("toDo: ", toDo);
+          toDo.setIsComplete(true);
+          console.log("toDo: ", toDo);
         }
       }
     });

@@ -15,6 +15,7 @@ export class ToDoGroup {
   }
 
   getToDo(id) {
+    id = parseInt(id);
     return this.#toDos.find((item) => item.getId() === id);
   }
 
