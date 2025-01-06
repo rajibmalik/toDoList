@@ -7,10 +7,13 @@ export const descriptionBtnClickListener = (function () {
   function createListener() {
     content.addEventListener("click", (e) => {
       if (e.target.classList.contains("toDoDescriptionBtn")) {
+        const project = document
+          .querySelector("#toDoGroupHeader")
+          .textContent.toLowerCase();
         const toDoContainer = e.target.closest(".toDoContainer");
 
         if (toDoContainer) {
-          const toDoData = toDoDOMParser.parse(toDoContainer);
+          const toDoData = toDoDOMParser.parse(project, toDoContainer);
           console.log(toDoData);
 
           const modal = descriptionBtnModal.createContainer(toDoData);

@@ -3,9 +3,8 @@ import { ToDoGroupManagerSingleton } from "./models/ToDoGroupManagerSingleton";
 export const toDoDOMParser = (function () {
   const toDoManager = ToDoGroupManagerSingleton.getInstance();
 
-  function parse(toDoDOMElement) {
-    const toDoObject = findToDoObject(toDoDOMElement);
-    console.log("TODO OBJECT: " + toDoObject);
+  function parse(project, toDoDOMElement) {
+    const toDoObject = findToDoObject(project, toDoDOMElement);
     const title = toDoObject.getTitle();
     const description = toDoObject.getDescription();
     const dueDate = toDoObject.getDueDate();
@@ -21,11 +20,10 @@ export const toDoDOMParser = (function () {
     return toDoData;
   }
 
-  function findToDoObject(toDoDOMElement) {
+  function findToDoObject(project, toDoDOMElement) {
     const id = parseInt(toDoDOMElement.id);
-    console.log("ID: " + id);
-    const toDo = toDoManager.getToDo(id);
-    console.log("TODO: " + toDo);
+    const toDoGroup = toDoManager.getToDoGroup(project);
+    const toDo = toDoGroup.getToDo(id);
 
     return toDo;
   }
